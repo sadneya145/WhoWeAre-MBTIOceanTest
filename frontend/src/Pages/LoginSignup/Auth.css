@@ -1,0 +1,89 @@
+.auth-container {
+  background-color: #ffffff; /* Soft Cream Pink */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  color: #f45728; /* Deep Orange Red */
+  margin-bottom: 10px;
+}
+
+.auth-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: #DC4417;
+  box-shadow: 0 0 5px rgba(220, 68, 23, 0.3);
+}
+
+.auth-form button {
+  padding: 12px;
+  background-color: #ed5729;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #b9320f;
+}
+
+.social-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-auth button {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.social-auth button:hover {
+  background-color: #333;
+}
+
+.signup-link {
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+}
+
+.signup-link span {
+  color: #DC4417;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.signup-link span:hover {
+  text-decoration: underline;
+}
