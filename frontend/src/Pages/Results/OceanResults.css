@@ -1,0 +1,399 @@
+/* Color Variables */
+:root {
+  --primary-dark: #213555;
+  --primary-medium: #3E5879;
+  --secondary-light: #D8C4B6;
+  --background-light: #F5EFE7;
+}
+
+/* Base Styles */
+.ocean-results-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--primary-dark);
+}
+
+/* Header */
+.results-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.results-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.results-header p {
+  font-size: 1.2rem;
+  color: var(--primary-medium);
+  opacity: 0.8;
+}
+
+/* OCEAN Section */
+.ocean-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(33, 53, 85, 0.1);
+  border: 1px solid rgba(216, 196, 182, 0.3);
+}
+
+.ocean-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.ocean-scores h2 {
+  color: var(--primary-dark);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.scores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.score-item {
+  background: rgba(245, 239, 231, 0.5);
+  padding: 1rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-medium);
+}
+
+.score-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.trait-name {
+  font-weight: 600;
+  color: var(--primary-dark);
+  font-size: 1rem;
+}
+
+.score-value {
+  font-weight: 700;
+  color: var(--primary-medium);
+  font-size: 1.1rem;
+}
+
+.score-bar {
+  height: 8px;
+  background: rgba(216, 196, 182, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-medium), var(--primary-dark));
+  border-radius: 4px;
+  transition: width 0.8s ease-in-out;
+}
+
+.radar-chart-container {
+  background: rgba(245, 239, 231, 0.3);
+  border-radius: 15px;
+  padding: 1rem;
+  border: 1px solid rgba(216, 196, 182, 0.4);
+}
+
+.ocean-description {
+  background: linear-gradient(135deg, rgba(62, 88, 121, 0.1), rgba(216, 196, 182, 0.1));
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--secondary-light);
+}
+
+.ocean-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+/* MBTI Section */
+.mbti-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(33, 53, 85, 0.1);
+  border: 1px solid rgba(216, 196, 182, 0.3);
+  text-align: center;
+}
+
+.mbti-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.mbti-header h2 {
+  color: var(--primary-dark);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mbti-type {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 15px rgba(33, 53, 85, 0.3);
+}
+
+.mbti-short-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--primary-medium);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Detailed Section */
+.detailed-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(33, 53, 85, 0.08);
+  border: 1px solid rgba(216, 196, 182, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(216, 196, 182, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.detail-card:hover {
+  border-color: rgba(216, 196, 182, 0.4);
+  box-shadow: 0 8px 30px rgba(33, 53, 85, 0.12);
+}
+
+.detail-card:hover::before {
+  left: 100%;
+}
+
+.detail-card h3 {
+  color: var(--primary-dark);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondary-light);
+  padding-bottom: 0.5rem;
+}
+
+.detail-card p {
+  line-height: 1.6;
+  color: var(--primary-medium);
+  font-size: 1rem;
+}
+
+.detail-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-card li {
+  padding: 0.5rem 0;
+  color: var(--primary-medium);
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.detail-card li::before {
+  content: "•";
+  color: var(--secondary-light);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Compatibility Section */
+.compatibility-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.type-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.type-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.type-tag.compatible {
+  background: linear-gradient(135deg, rgba(62, 88, 121, 0.1), rgba(216, 196, 182, 0.2));
+  color: var(--primary-dark);
+  border: 1px solid var(--secondary-light);
+}
+
+.type-tag.challenging {
+  background: rgba(216, 196, 182, 0.2);
+  color: var(--primary-medium);
+  border: 1px solid rgba(216, 196, 182, 0.5);
+}
+
+/* Celebrities */
+.celebrities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.celebrity-tag {
+  background: linear-gradient(135deg, var(--secondary-light), rgba(245, 239, 231, 0.8));
+  color: var(--primary-dark);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(216, 196, 182, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ocean-results-container {
+    padding: 1rem;
+  }
+  
+  .results-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .ocean-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .mbti-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .compatibility-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .ocean-section,
+  .mbti-section,
+  .detail-card {
+    padding: 1.5rem;
+  }
+  
+  .type-tags,
+  .celebrities {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .results-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .mbti-type {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+  }
+  
+  .ocean-section,
+  .mbti-section,
+  .detail-card {
+    padding: 1rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ocean-results-container > * {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.ocean-results-container > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.ocean-results-container > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.ocean-results-container > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
