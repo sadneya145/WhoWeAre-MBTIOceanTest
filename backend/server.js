@@ -212,5 +212,30 @@ app.get("/quiz/detail/:id", async (req, res) => {
   }
 });
 
+
+
+// profile page backend
+
+// Get user profile by email
+app.get("/user/:email", async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.params.email });
+    if (!user) return res.status(404).json({ message: "User not found" });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Get quizzes for a user by email
+app.get("/quizzes/:email", async (req, res) => {
+  try {
+    const quizzes = await Quiz.find({ email: req.params.email });
+    res.json(quizzes);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

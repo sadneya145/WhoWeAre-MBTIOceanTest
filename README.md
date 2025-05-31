@@ -1,5 +1,7 @@
 # color scheme
-Background	Soft Cream Pink	#F4E7E1	Calm, gentle base color
-Accent 1	Warm Light Orange	#FFA447	Friendly, energetic highlight
-Accent 2	Deep Orange Red	#DC4417	Bold personality, use for buttons/cards
-Primary Text / UI	Black	#000000	Clean, modern contrast for legibility
+https://colorhunt.co/palette/2135553e5879d8c4b6f5efe7  - color scheme
+
+#213555
+#3E5879
+#D8C4B6
+#F5EFE7

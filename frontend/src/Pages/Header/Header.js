@@ -12,21 +12,19 @@ const Header = ({ user }) => {
 
       <nav className="nav-links">
         <Link to="/home">Home</Link>
-        <Link to="/quiz">Take Quiz</Link>
+        <Link to="/home/quiz">Take Quiz</Link>
         <Link to="/about">About Us</Link>
       </nav>
 
       <div className="auth-section">
         {user ? (
-          <Link to="/home/profile" className="profile-link">
+          <Link to={`/home/profile/${encodeURIComponent(user.email)}`} className="profile-link">
             <img
               src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.displayName || user.email}`}
               alt="User Avatar"
-              className="user-avatar"
+              className="user-avatar-home"
             />
-            <span className="user-name">
-              {user.displayName || user.email}
-            </span>
+            <span className="user-name">{user.displayName || user.email}</span>
           </Link>
         ) : (
           <div className="auth-buttons">
