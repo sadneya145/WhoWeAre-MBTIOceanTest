@@ -18,7 +18,7 @@ const Signup = () => {
 
   const sendOtpToEmail = async () => {
     try {
-      const response = await fetch('http://localhost:5000/send-otp', {
+      const response = await fetch('https://whoweare-mbtioceantest-backend.onrender.com/send-otp', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email}),
@@ -37,7 +37,7 @@ const Signup = () => {
 
   const verifyOtp = async () => {
     try {
-      const response = await fetch('http://localhost:5000/verify-otp', {
+      const response = await fetch('https://whoweare-mbtioceantest-backend.onrender.com/verify-otp', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email, otp}),
