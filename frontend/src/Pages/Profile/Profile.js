@@ -31,10 +31,10 @@ const Profile = () => {
             setError(null);
             try {
                 const userRes = await axios.get(
-                    `http://localhost:5000/user/${encodeURIComponent(email)}`
+                    `https://whoweare-mbtioceantest-backend.onrender.com/user/${encodeURIComponent(email)}`
                 );
                 const quizRes = await axios.get(
-                    `http://localhost:5000/quizzes/${encodeURIComponent(email)}`
+                    `https://whoweare-mbtioceantest-backend.onrender.com/quizzes/${encodeURIComponent(email)}`
                 );
 
                 setUser(userRes.data);
