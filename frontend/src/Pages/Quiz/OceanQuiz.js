@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './OceanQuiz.css';
 
 const OceanQuiz = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [responses, setResponses] = useState({});
+  const navigate = useNavigate();
 
   const sections = [
     {
@@ -88,6 +90,11 @@ const OceanQuiz = () => {
     }
   ];
 
+  // Scroll to top when section changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentSection]);
+
   const handleResponse = (questionId, value) => {
     setResponses(prev => ({
       ...prev,
@@ -102,9 +109,8 @@ const OceanQuiz = () => {
   };
 
   const handleSubmit = () => {
-    console.log('Quiz responses:', responses);
-    // You can replace this with your submission logic
-    alert('Quiz submitted! Check console for responses.');
+    // Navigate to results page
+    navigate('/results');
   };
 
   const isCurrentSectionComplete = () => {
@@ -133,7 +139,7 @@ const OceanQuiz = () => {
   };
 
   return (
-    <div className="ocean-quiz-container">
+    <div className={`ocean-quiz-container section-${currentSection}`}>
       {/* Progress Bar */}
       <div className="progress-section">
         <div className="progress-header">

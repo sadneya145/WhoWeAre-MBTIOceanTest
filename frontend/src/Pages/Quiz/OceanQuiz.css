@@ -1,17 +1,41 @@
 /* Ocean Quiz Styles - Professional Blue Theme */
 .ocean-quiz-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #213555 0%, #3E5879 50%, #4a6fa5 100%);
     padding: 3rem 1rem;
     font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     position: relative;
     overflow-x: hidden;
+    /* Fix for automatic scroll up issue */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* Animated background elements */
+  /* Section-specific backgrounds */
+  .ocean-quiz-container.section-0 {
+    background: linear-gradient(90deg, #8bcfe0, #5ba4d0);
+  }
+  
+  .ocean-quiz-container.section-1 {
+    background: linear-gradient(90deg, #5ba4d0, #2e6f9e);
+  }
+  
+  .ocean-quiz-container.section-2 {
+    background: linear-gradient(90deg, #2e6f9e, #1f4c75);
+  }
+  
+  .ocean-quiz-container.section-3 {
+    background: linear-gradient(90deg, #1f4c75, #142f4f);
+  }
+  
+  .ocean-quiz-container.section-4 {
+    background: linear-gradient(90deg, #142f4f, #0b1a2e);
+  }
+  
+  /* Animated background elements - Fixed to prevent horizontal overflow */
   .ocean-quiz-container::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -23,11 +47,12 @@
     background-size: 100px 100px, 150px 150px, 200px 200px;
     animation: float 20s ease-in-out infinite;
     pointer-events: none;
+    z-index: 0;
   }
   
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
   
   /* Progress Section */
@@ -260,11 +285,12 @@
     50% { transform: scale(1.1); }
   }
   
+  /* Fixed label styling to prevent overflow */
   .radio-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #3E5879;
     text-align: center;
-    max-width: 80px;
+    max-width: 90px;
     line-height: 1.2;
     opacity: 0;
     transition: all 0.3s ease;
@@ -275,10 +301,25 @@
     white-space: nowrap;
     font-weight: 600;
     background: rgba(245, 239, 231, 0.95);
-    padding: 0.25rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(33, 53, 85, 0.15);
     border: 1px solid rgba(216, 196, 182, 0.5);
+    z-index: 10;
+    /* Prevent text overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: fit-content;
+  }
+  
+  /* Special handling for longer labels */
+  .radio-label:nth-child(1),
+  .radio-label:nth-child(5) {
+    font-size: 0.75rem;
+    max-width: 100px;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.1;
   }
   
   .radio-button-container:hover .radio-label {
@@ -442,6 +483,11 @@
     .scale-label {
       font-size: 1rem;
     }
+    
+    .radio-label {
+      font-size: 0.75rem;
+      max-width: 80px;
+    }
   }
   
   @media (max-width: 480px) {
@@ -473,5 +519,11 @@
     
     .scale-label {
       font-size: 0.9rem;
+    }
+    
+    .radio-label {
+      font-size: 0.7rem;
+      max-width: 70px;
+      padding: 0.2rem 0.4rem;
     }
   }
