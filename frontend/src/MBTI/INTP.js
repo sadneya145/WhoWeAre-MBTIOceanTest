@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
+
 
 const INTP = () => {
   return (
@@ -25,7 +27,7 @@ const INTP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/intp-albert-einstein.jpg"
+                src="https://hips.hearstapps.com/hmg-prod/images/albert-einstein-gettyimages-123395987.jpg"
                 alt="Albert Einstein"
                 className="character-image"
               />
@@ -37,7 +39,7 @@ const INTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/intp-bill-gates.jpg"
+                src="https://hips.hearstapps.com/hmg-prod/images/bill-gates-discusses-his-new-book-how-to-prevent-the-next-news-photo-1742328104.pjpeg"
                 alt="Bill Gates"
                 className="character-image"
               />
@@ -49,7 +51,7 @@ const INTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/intp-tina-fey.jpg"
+                src="https://m.media-amazon.com/images/M/MV5BZDQ3OWVkOGUtMjY1Yi00MjNjLThiMTYtYWMyN2ZhMmE4ZTA1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
                 alt="Tina Fey"
                 className="character-image"
               />
@@ -77,7 +79,7 @@ const INTP = () => {
               </p>
             </div>
             <img
-              src="/images/intp-intro.jpg"
+              src="https://img.freepik.com/premium-vector/thinking-abstract-concept-vector-illustration_107173-24960.jpg?semt=ais_hybrid&w=740"
               alt="INTP introduction - abstract brain illustration with ideas"
               className="section-image intro-image"
             />
@@ -88,11 +90,7 @@ const INTP = () => {
         <section className="personality-section strengths-weaknesses-section">
           <h2 className="section-title">Strengths & Challenges</h2>
           <div className="content-with-image">
-            <img
-              src="/images/intp-strengths.jpg"
-              alt="INTP strength visual - gears and patterns"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Strengths</h3>
               <ul className="strength-list">
@@ -178,7 +176,7 @@ const INTP = () => {
               </ul>
             </div>
             <img
-              src="/images/intp-career.jpg"
+              src="https://img.freepik.com/free-vector/hand-drawn-flat-design-rpa-illustration_23-2149277643.jpg?semt=ais_items_boosted&w=740"
               alt="INTP career image - tech and creativity"
               className="section-image career-image"
             />
@@ -192,18 +190,9 @@ const INTP = () => {
             Get a glimpse into the logic, wonder, and wit of INTP personalities.
           </p>
           <div className="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/your-intp-video-id"
-              title="INTP Personality Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GcOeGJ5hFA0?si=ILRHWZWk7d4gkQAy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Replace "your-intp-video-id" with a relevant YouTube video ID.
-          </p>
+
         </section>
         {/* Famous INTPs Section */}
         <section className="personality-section famous-istjs-section">
@@ -214,7 +203,7 @@ const INTP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/intp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/intp-famous-people.png" // Placeholder for image
               alt="Famous INTPs visual - a collage of thinkers and inventors"
               className="section-image famous-image"
             />
@@ -258,7 +247,7 @@ const INTP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '90%'}}
+                  style={{ width: '90%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -266,28 +255,28 @@ const INTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '40%'}}></div>
+                <div className="bar-fill low" style={{ width: '40%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '25%'}}></div>
+                <div className="bar-fill low" style={{ width: '25%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '55%'}}></div>
+                <div className="bar-fill medium" style={{ width: '55%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -304,6 +293,7 @@ const INTP = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ENFP = () => {
   return (
@@ -26,7 +27,7 @@ const ENFP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/enfp-robin-williams.jpg"
+                src="https://www.billboard.com/wp-content/uploads/media/robin-williams-2009-billboard-650.jpg?w=650"
                 alt="Robin Williams"
                 className="character-image"
               />
@@ -38,7 +39,7 @@ const ENFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/enfp-ellen-degeneres.jpg"
+                src="https://www.rollingstone.com/wp-content/uploads/2024/04/ellen-stand-up.jpg?w=1581&h=1054&crop=1"
                 alt="Ellen DeGeneres"
                 className="character-image"
               />
@@ -50,7 +51,7 @@ const ENFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/enfp-will-smith.jpg"
+                src="https://www.hollywoodreporter.com/wp-content/uploads/2023/08/Will-Smith-getty-H-2023.jpg?w=1296"
                 alt="Will Smith"
                 className="character-image"
               />
@@ -79,7 +80,7 @@ const ENFP = () => {
               </p>
             </div>
             <img
-              src="/images/enfp-intro.jpg"
+              src="https://img.freepik.com/free-vector/flat-creativity-concept-illustration_52683-64279.jpg?semt=ais_hybrid&w=740"
               alt="ENFP Introduction Visual - colorful ocean waves symbolizing creativity and energy"
               className="section-image intro-image"
             />
@@ -93,11 +94,6 @@ const ENFP = () => {
             Explore the energetic and imaginative nature of ENFPs.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/enfp-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - a bright lighthouse and waves representing guidance and challenges"
-              className="section-image sw-image"
-            />
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -192,7 +188,7 @@ const ENFP = () => {
               </ul>
             </div>
             <img
-              src="/images/enfp-career.jpg"
+              src="https://img.freepik.com/free-vector/hand-drawn-busy-office-illustration_23-2151051237.jpg?semt=ais_items_boosted&w=740"
               alt="Career paths visual - vibrant brainstorming and connecting people"
               className="section-image career-image"
             />
@@ -208,19 +204,9 @@ const ENFP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-enfp-video-id' with an actual YouTube video ID */}
-            <iframe
-              src="https://www.youtube.com/embed/your-enfp-video-id"
-              title="Understanding the ENFP Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iC6Z2J7JLsA?si=zxnCFp_Eqa8mXuqj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-enfp-video-id" with a relevant YouTube video ID
-            for ENFP content.
-          </p>
+
         </section>
 
         {/* Famous ENFPs Section */}
@@ -232,7 +218,7 @@ const ENFP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/enfp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/enfp-famous-people.png" // Placeholder for image
               alt="Famous ENFPs visual - a collage of charismatic and inspiring personalities"
               className="section-image famous-image"
             />
@@ -277,7 +263,7 @@ const ENFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '90%'}}
+                  style={{ width: '90%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -285,7 +271,7 @@ const ENFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -294,7 +280,7 @@ const ENFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '95%'}}
+                  style={{ width: '95%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -302,14 +288,14 @@ const ENFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '80%'}}></div>
+                <div className="bar-fill high" style={{ width: '80%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -326,6 +312,7 @@ const ENFP = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'; // Use the same style.css
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ENFJ = () => {
   return (
@@ -26,7 +27,7 @@ const ENFJ = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/mr-feeny.jpg"
+                src="https://cdn.mos.cms.futurecdn.net/UuLVMXhHspXAdxBeEvBUMj-1200-80.jpg"
                 alt="Mr. Feeny"
                 className="character-image"
               />
@@ -38,7 +39,7 @@ const ENFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/melinda-may.jpg"
+                src="https://live.staticflickr.com/7436/11033992193_0c6da14d40_b.jpg"
                 alt="Melinda May"
                 className="character-image"
               />
@@ -50,7 +51,7 @@ const ENFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/morales-spiderman.jpg"
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Miles_Morales_%28Across_the_Spider-Verse%29.jpg/250px-Miles_Morales_%28Across_the_Spider-Verse%29.jpg"
                 alt="Miles Morales"
                 className="character-image"
               />
@@ -81,7 +82,7 @@ const ENFJ = () => {
               </p>
             </div>
             <img
-              src="/images/enfj-intro.jpg"
+              src="https://plus.unsplash.com/premium_vector-1682299575598-c066b2998703?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxlYWRlcnNoaXB8ZW58MHx8MHx8fDA%3D"
               alt="ENFJ Introduction Visual - a leader inspiring a group"
               className="section-image intro-image"
             />
@@ -95,11 +96,7 @@ const ENFJ = () => {
             Key traits that define the ENFJ personality type.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/enfj-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - hands helping and vision imagery"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -197,7 +194,7 @@ const ENFJ = () => {
               </ul>
             </div>
             <img
-              src="/images/enfj-career.jpg"
+              src="https://plus.unsplash.com/premium_vector-1683141147347-c6aa70127df2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGVhZGVyc2hpcHxlbnwwfHwwfHx8MA%3D%3D"
               alt="Career paths visual - leadership, education, and community"
               className="section-image career-image"
             />
@@ -212,19 +209,9 @@ const ENFJ = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace with an actual YouTube video ID about ENFJ */}
-            <iframe
-              src="https://www.youtube.com/embed/your-enfj-video-id"
-              title="Understanding the ENFJ Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ki0Sk-R50W8?si=7GuXSqRI7QYJPvzi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-enfj-video-id" with a relevant YouTube video ID
-            for the best experience.
-          </p>
+
         </section>
 
         {/* Famous ENFJs Section */}
@@ -236,7 +223,7 @@ const ENFJ = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/enfj-famous.jpg"
+              src="https://static1.personalitydatabase.net/2/pdb-article/46b048a9/characters/enfj-characters.png"
               alt="Famous ENFJs visual - a collage of influential figures"
               className="section-image famous-image"
             />
@@ -273,38 +260,35 @@ const ENFJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '85%'}}></div>
+                <div className="bar-fill high" style={{ width: '85%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '80%'}}></div>
+                <div className="bar-fill high" style={{ width: '80%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '90%'}}></div>
+                <div className="bar-fill very-high" style={{ width: '90%' }}></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div
-                  className="bar-fill very-high"
-                  style={{width: '95%'}}
-                ></div>
+                <div className="bar-fill very-high" style={{ width: '95%' }}  ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -323,15 +307,8 @@ const ENFJ = () => {
         </section>
 
         {/* Call to Action/Footer */}
-        <footer className="personality-footer">
-          <p>
-            Ready to explore more personality types?
-            <a href="/explore" className="footer-link">
-              Discover Your Type!
-            </a>
-          </p>
-        </footer>
       </div>
+      <Footer />
     </div>
   );
 };

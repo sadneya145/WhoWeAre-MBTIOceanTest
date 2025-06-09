@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'; // Assuming style.css contains the custom marine-themed styles
 import Header from '../Pages/Header/Header';
-
+import Footer from '../Pages/Footer/Footer';
 const ESTP = () => {
   return (
     <div>
@@ -26,7 +26,7 @@ const ESTP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/estp-tony-stark.jpg"
+                src="https://cdn.marvel.com/content/1x/002irm_ons_inl_06_0.jpg"
                 alt="Tony Stark"
                 className="character-image"
               />
@@ -39,7 +39,7 @@ const ESTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/estp-eleanor-roosevelt.jpg"
+                src="https://eachother.org.uk/wp-content/uploads/2017/09/eleanorroosevelt_640x400-1.jpg"
                 alt="Eleanor Roosevelt"
                 className="character-image"
               />
@@ -51,7 +51,7 @@ const ESTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/estp-james-bond.jpg"
+                src="https://c.files.bbci.co.uk/fa50/live/0428c650-fca1-11ef-8e22-8daeea0feb09.jpg"
                 alt="James Bond"
                 className="character-image"
               />
@@ -83,7 +83,7 @@ const ESTP = () => {
               </p>
             </div>
             <img
-              src="/images/estp-intro.jpg"
+              src="https://cdni.iconscout.com/illustration/premium/thumb/ship-captain-illustration-download-in-svg-png-gif-file-formats--female-cruise-woman-pack-people-illustrations-4538025.png"
               alt="ESTP Introduction Visual - a captain steering a ship with confidence"
               className="section-image intro-image"
             />
@@ -97,11 +97,7 @@ const ESTP = () => {
             Exploring the energetic and adaptable nature of ESTPs.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/estp-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - a compass and a wave symbolizing adaptability"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -202,7 +198,7 @@ const ESTP = () => {
               </ul>
             </div>
             <img
-              src="/images/estp-career.jpg"
+              src="https://img.freepik.com/free-vector/wedding-planner-concept-illustration_114360-2560.jpg"
               alt="Career paths visual - a bustling marketplace, emergency responders, a business meeting"
               className="section-image career-image"
             />
@@ -218,19 +214,9 @@ const ESTP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-estp-video-id' with an actual YouTube video ID for ESTP */}
-            <iframe
-              src="https://www.youtube.com/embed/your-estp-video-id"
-              title="Understanding the ESTP Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9Q92mX44S5s?si=xwHv6eyY_l3E-NdW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-estp-video-id" with a relevant YouTube video ID
-            for optimal content.
-          </p>
+
         </section>
 
         {/* Famous ESTPs Section */}
@@ -242,7 +228,7 @@ const ESTP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/estp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/estp-famous-people.png" // Placeholder for image
               alt="Famous ESTPs visual - a collage of dynamic leaders and adventurous figures"
               className="section-image famous-image"
             />
@@ -286,14 +272,14 @@ const ESTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '60%'}}></div>
+                <div className="bar-fill medium" style={{ width: '60%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '30%'}}></div>
+                <div className="bar-fill low" style={{ width: '30%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
@@ -302,7 +288,7 @@ const ESTP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '95%'}}
+                  style={{ width: '95%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -310,14 +296,14 @@ const ESTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '55%'}}></div>
+                <div className="bar-fill medium" style={{ width: '55%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '25%'}}></div>
+                <div className="bar-fill low" style={{ width: '25%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
@@ -333,14 +319,9 @@ const ESTP = () => {
           </p>
         </section>
 
-        {/* Footer or Closing Section */}
-        <footer className="personality-footer">
-          <p>
-            Sail confidently with the ESTP spirit — bold, adaptable, and always
-            ready to navigate the waves of life.
-          </p>
-        </footer>
+
       </div>
+      <Footer />
     </div>
   );
 };

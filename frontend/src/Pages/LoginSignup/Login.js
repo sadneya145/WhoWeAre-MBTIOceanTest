@@ -31,28 +31,34 @@ const Login = () => {
     }
   };
 
-const handleGoogleLogin = async () => {
-  try {
-    const result = await signInWithGoogle();
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithGoogle();
 
-    if (result.isNewUser) {
-      alert("Welcome! Redirecting you to signup...");
-      setTimeout(() => navigate("/signup"), 500); // delay navigation
-    } else {
-      alert("Login successful with Google!");
-      setTimeout(() => navigate("/"), 500);
+      if (result.isNewUser) {
+        alert("Welcome! Redirecting you to signup...");
+        setTimeout(() => navigate("/signup"), 500); // delay navigation
+      } else {
+        alert("Login successful with Google!");
+        setTimeout(() => navigate("/home"), 500);
+      }
+    } catch (error) {
+      alert("Google login failed: " + error.message);
     }
-  } catch (error) {
-    alert("Google login failed: " + error.message);
-  }
-};
+  };
 
 
 
   return (
     <div className="auth-container">
+      <div className="floating-shape"></div>
+      <div className="floating-shape"></div>
+      <div className="floating-shape"></div>
+      <div className="floating-shape"></div>
+      <div className="glowing-orb"></div>
+      <div className="glowing-orb"></div>
       <form className="auth-form" onSubmit={handleLogin}>
-        <h2>Welcome Back</h2>
+        <h2>Welcome Back !</h2>
 
         <input
           type="email"
@@ -70,18 +76,21 @@ const handleGoogleLogin = async () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">Log In</button>
+        <button className="loginbutton" type="submit">Log In</button>
 
-        <div className="social-auth">
-          <button type="button" onClick={handleGoogleLogin}>
-            Continue with Google
-          </button>
-          <button type="button" onClick={signInWithFacebook}>
-            Continue with Facebook
-          </button>
-          <button type="button" onClick={signInWithApple}>
-            Continue with Apple
-          </button>
+        <div className="social-icons">
+          <p>or you can sign in with</p>
+          <div className="icon-row">
+            <button onClick={handleGoogleLogin} aria-label="Sign in with Google">
+              <img src="https://img.icons8.com/color/512/google-logo.png" alt="Google" />
+            </button>
+            <button onClick={signInWithApple} aria-label="Sign in with Apple">
+              <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="Apple" />
+            </button>
+            <button onClick={signInWithFacebook} aria-label="Sign in with Facebook">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Facebook" />
+            </button>
+          </div>
         </div>
 
         <p className="signup-link">

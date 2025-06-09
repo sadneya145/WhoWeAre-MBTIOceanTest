@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ISFP = () => {
   return (
@@ -25,7 +26,7 @@ const ISFP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/isfp-marilyn-monroe.jpg"
+                src="https://hips.hearstapps.com/hmg-prod/images/marilyn_monroe_photo_alfred_eisenstaedt_pix_inc_the_life_picture_collection_getty_images_53376357_cropped.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"
                 alt="Marilyn Monroe"
                 className="character-image"
               />
@@ -37,7 +38,7 @@ const ISFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/isfp-bob-ross.jpg"
+                src="https://cdn.britannica.com/03/193803-050-CBC590FA/Bob-Ross.jpg"
                 alt="Bob Ross"
                 className="character-image"
               />
@@ -49,7 +50,7 @@ const ISFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/isfp-lana-del-rey.jpg"
+                src="https://www.hollywoodinsider.com/wp-content/uploads/2024/03/The-Hollywood-Insider-Lana-Del-Rey.jpg"
                 alt="Lana Del Rey"
                 className="character-image"
               />
@@ -77,7 +78,7 @@ const ISFP = () => {
               </p>
             </div>
             <img
-              src="/images/isfp-intro.jpg"
+              src="https://cdni.iconscout.com/illustration/free/thumb/free-artist-illustration-download-in-svg-png-gif-file-formats--art-drawing-paint-background-1742873.png"
               alt="ISFP introduction visual - colorful brush strokes and calm sea"
               className="section-image intro-image"
             />
@@ -91,11 +92,6 @@ const ISFP = () => {
             The ISFP personality brings emotional depth and creative brilliance.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/isfp-strengths.jpg"
-              alt="ISFP strengths and challenges visual - artistic ocean flow"
-              className="section-image sw-image"
-            />
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -181,7 +177,7 @@ const ISFP = () => {
               </ul>
             </div>
             <img
-              src="/images/isfp-career.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYvVPvdfYAlSpZK_kGJWL4FmQt-sMb4M4RMg&s"
               alt="ISFP career - art, music, and nature"
               className="section-image career-image"
             />
@@ -196,18 +192,8 @@ const ISFP = () => {
             them.
           </p>
           <div className="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/your-isfp-video-id"
-              title="ISFP Personality Explained"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BSIPI8jOwvg?si=caSk6ixZB4G_ZNzt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Replace "your-isfp-video-id" with a real YouTube video ID.
-          </p>
         </section>
 
         {/* Famous ISFPs Section */}
@@ -219,7 +205,7 @@ const ISFP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/isfp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/isfp-famous-people.png" // Placeholder for image
               alt="Famous ISFPs visual - a collage of artists and sensitive individuals"
               className="section-image famous-image"
             />
@@ -261,35 +247,35 @@ const ISFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '75%'}}></div>
+                <div className="bar-fill high" style={{ width: '75%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '30%'}}></div>
+                <div className="bar-fill low" style={{ width: '30%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '80%'}}></div>
+                <div className="bar-fill high" style={{ width: '80%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '55%'}}></div>
+                <div className="bar-fill medium" style={{ width: '55%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -306,6 +292,7 @@ const ISFP = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

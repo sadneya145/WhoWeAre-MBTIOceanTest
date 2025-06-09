@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'; // Assuming style.css contains the custom marine-themed styles
 import Header from '../Pages/Header/Header';
-
+import Footer from '../Pages/Footer/Footer';
 const INTJ = () => {
   return (
     <div>
@@ -26,7 +26,7 @@ const INTJ = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/intj-sherlock-holmes.jpg"
+                src="https://resizing.flixster.com/6wVX06rR-DNuugJUZ7HBIODls8s=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8992561_i_h9_ab.jpg"
                 alt="Sherlock Holmes"
                 className="character-image"
               />
@@ -38,7 +38,7 @@ const INTJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/intj-magnus-carlsen.jpg"
+                src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-12/27/full/1735282259-0748.jpg"
                 alt="Magnus Carlsen"
                 className="character-image"
               />
@@ -50,7 +50,7 @@ const INTJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/intj-tyrion-lannister.jpg"
+                src="https://static.toiimg.com/thumb/62981209/Peter-Dinklage-aka-Tyrion-Lannister-is-in-Kashmir-and-we-cannot-keep-calm.jpg?width=1200&height=900"
                 alt="Tyrion Lannister"
                 className="character-image"
               />
@@ -82,7 +82,7 @@ const INTJ = () => {
               </p>
             </div>
             <img
-              src="/images/intj-intro.jpg"
+              src="https://slidemodel.com/wp-content/uploads/02-action-plan-illustration-01.png"
               alt="INTJ Introduction Visual - a captain plotting a course with a map and compass"
               className="section-image intro-image"
             />
@@ -96,11 +96,7 @@ const INTJ = () => {
             Delve into the core traits that empower and challenge INTJs.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/intj-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - a lighthouse representing guidance and a puzzle piece representing complexity"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -197,7 +193,7 @@ const INTJ = () => {
               </ul>
             </div>
             <img
-              src="/images/intj-career.jpg"
+              src="https://static.vecteezy.com/system/resources/previews/006/461/674/non_2x/male-architect-presenting-project-concept-cartoon-illustration-man-engineer-standing-near-drawing-board-explaining-project-draft-and-building-flat-illustration-vector.jpg"
               alt="Career paths visual - laboratory, blueprint drafting, business strategy meeting"
               className="section-image career-image"
             />
@@ -213,19 +209,9 @@ const INTJ = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-intj-video-id' with an actual YouTube video ID for INTJ */}
-            <iframe
-              src="https://www.youtube.com/embed/your-intj-video-id"
-              title="Understanding the INTJ Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/p71m6O1uo3I?si=oGdAiehxK7N5mvWn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-intj-video-id" with a relevant YouTube video ID
-            for optimal content.
-          </p>
+
         </section>
 
         {/* Famous INTJs Section */}
@@ -237,7 +223,7 @@ const INTJ = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/intj-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/intj-famous-people.png" // Placeholder for image
               alt="Famous INTJs visual - a collage of visionary leaders and thinkers"
               className="section-image famous-image"
             />
@@ -281,35 +267,35 @@ const INTJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '85%'}}></div>
+                <div className="bar-fill high" style={{ width: '85%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '90%'}}></div>
+                <div className="bar-fill high" style={{ width: '90%' }}></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '25%'}}></div>
+                <div className="bar-fill low" style={{ width: '25%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '40%'}}></div>
+                <div className="bar-fill medium" style={{ width: '40%' }}></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
             </div>
@@ -327,16 +313,9 @@ const INTJ = () => {
             suggests emotional stability and resilience.
           </p>
         </section>
-        {/* Call to Action/Footer */}
-        <footer className="personality-footer">
-          <p>
-            Ready to navigate more personality types?
-            <a href="/explore" className="footer-link">
-              Chart Your Course!
-            </a>
-          </p>
-        </footer>
+
       </div>
+      <Footer />
     </div>
   );
 };

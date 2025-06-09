@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './OceanQuiz.css';
+import { getAuth } from 'firebase/auth';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
 
 const OceanQuiz = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [responses, setResponses] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+  const auth = getAuth();
+  const user = auth.currentUser;
+
 
   const sections = [
     {
@@ -108,10 +116,31 @@ const OceanQuiz = () => {
     }
   };
 
-  const handleSubmit = () => {
-    // Navigate to results page
-    navigate('/results');
-  };
+
+const handleSubmit = async () => {
+  setIsSubmitting(true);
+  try {
+    const response = await fetch('http://localhost:4000/quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: responses })
+    });
+
+    const data = await response.json();
+
+    // Optional: Save to localStorage if needed
+    localStorage.setItem('oceanResults', JSON.stringify(data));
+
+    // Navigate to result page with state
+    navigate('/home/results', { state: { resultData: data } });
+  } catch (error) {
+    console.error('Error submitting quiz:', error);
+    alert('Submission failed. Try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const isCurrentSectionComplete = () => {
     const currentQuestions = sections[currentSection].questions;
@@ -124,7 +153,7 @@ const OceanQuiz = () => {
 
   const RadioButton = ({ questionId, value, selected, onChange }) => {
     const labels = ['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree'];
-    
+
     return (
       <div className="radio-button-container">
         <button
@@ -139,100 +168,102 @@ const OceanQuiz = () => {
   };
 
   return (
-    <div className={`ocean-quiz-container section-${currentSection}`}>
-      {/* Progress Bar */}
-      <div className="progress-section">
-        <div className="progress-header">
-          <span className="progress-text">Progress</span>
-          <span className="progress-text">{currentSection + 1} of {sections.length}</span>
-        </div>
-        <div className="progress-bar">
-          <div 
-            className="progress-fill"
-            style={{ width: `${getProgress()}%` }}
-          ></div>
-        </div>
-      </div>
-
-      {/* Current Section */}
-      <div className="quiz-card">
-        <div className="section-header">
-          <h2 className="section-title">{sections[currentSection].title}</h2>
-          <p className="section-description">{sections[currentSection].description}</p>
+    <><Header user={user} />
+      <div className={`ocean-quiz-container section-${currentSection}`}>
+        {/* Progress Bar */}
+        <div className="progress-section">
+          <div className="progress-header">
+            <span className="progress-text">Progress</span>
+            <span className="progress-text">{currentSection + 1} of {sections.length}</span>
+          </div>
+          <div className="progress-bar">
+            <div
+              className="progress-fill"
+              style={{ width: `${getProgress()}%` }}
+            ></div>
+          </div>
         </div>
 
-        {/* Questions */}
-        <div className="questions-container">
-          {sections[currentSection].questions.map((question, index) => (
-            <div key={question.id} className="question-item">
-              <div className="question-text">
-                <p> {question.text}</p>
-              </div>
-              
-              {/* Rating Scale */}
-              <div className="rating-scale">
-                <span className="scale-label">Disagree</span>
-                <div className="radio-buttons">
-                  {[1, 2, 3, 4, 5].map(value => (
-                    <RadioButton
-                      key={value}
-                      questionId={question.id}
-                      value={value}
-                      selected={responses[question.id] === value}
-                      onChange={handleResponse}
-                    />
-                  ))}
+        {/* Current Section */}
+        <div className="quiz-card">
+          <div className="section-header">
+            <h2 className="section-title-quiz">{sections[currentSection].title}</h2>
+            <p className="section-description">{sections[currentSection].description}</p>
+          </div>
+
+          {/* Questions */}
+          <div className="questions-container">
+            {sections[currentSection].questions.map((question, index) => (
+              <div key={question.id} className="question-item">
+                <div className="question-text">
+                  <p> {question.text}</p>
                 </div>
-                <span className="scale-label">Agree</span>
+
+                {/* Rating Scale */}
+                <div className="rating-scale">
+                  <span className="scale-label">Disagree</span>
+                  <div className="radio-buttons">
+                    {[1, 2, 3, 4, 5].map(value => (
+                      <RadioButton
+                        key={value}
+                        questionId={question.id}
+                        value={value}
+                        selected={responses[question.id] === value}
+                        onChange={handleResponse}
+                      />
+                    ))}
+                  </div>
+                  <span className="scale-label">Agree</span>
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="navigation-section">
+          {currentSection < sections.length - 1 ? (
+            <button
+              onClick={handleNext}
+              disabled={!isCurrentSectionComplete()}
+              className="nav-button next-button"
+            >
+              <span>Next Section</span>
+              <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          ) : (
+            <button
+              onClick={handleSubmit}
+              disabled={!isCurrentSectionComplete()}
+              className="nav-button submit-button"
+            >
+              <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Submit Quiz</span>
+            </button>
+          )}
+        </div>
+
+        {/* Section Navigation Dots */}
+        <div className="dots-container">
+          {sections.map((_, index) => (
+            <div
+              key={index}
+              className={`dot ${index === currentSection
+                ? 'current'
+                : index < currentSection
+                  ? 'completed'
+                  : 'pending'
+                }`}
+            />
           ))}
         </div>
       </div>
-
-      {/* Navigation */}
-      <div className="navigation-section">
-        {currentSection < sections.length - 1 ? (
-          <button
-            onClick={handleNext}
-            disabled={!isCurrentSectionComplete()}
-            className="nav-button next-button"
-          >
-            <span>Next Section</span>
-            <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        ) : (
-          <button
-            onClick={handleSubmit}
-            disabled={!isCurrentSectionComplete()}
-            className="nav-button submit-button"
-          >
-            <svg className="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Submit Quiz</span>
-          </button>
-        )}
-      </div>
-
-      {/* Section Navigation Dots */}
-      <div className="dots-container">
-        {sections.map((_, index) => (
-          <div
-            key={index}
-            className={`dot ${
-              index === currentSection
-                ? 'current'
-                : index < currentSection
-                ? 'completed'
-                : 'pending'
-            }`}
-          />
-        ))}
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

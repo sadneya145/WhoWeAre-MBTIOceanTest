@@ -1,9 +1,51 @@
-import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import React, { useEffect, useState } from 'react';
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer
+} from 'recharts';
 import './OceanResults.css';
 
-const OceanResults = ({ oceanScores, mbtiType }) => {
-  // Sample data - replace with your actual props
+const OceanResults = () => {
+  const [oceanScores, setOceanScores] = useState([]);
+  const [mbtiType, setMbtiType] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:4000/results')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.length > 0) {
+          const latest = data[0];
+
+          const oceanOrder = ['O', 'C', 'E', 'A', 'N'];
+          const traitMap = {
+            O: 'Openness',
+            C: 'Conscientiousness',
+            E: 'Extraversion',
+            A: 'Agreeableness',
+            N: 'Neuroticism'
+          };
+
+          const scoresArray = oceanOrder.map(trait => ({
+            trait: traitMap[trait],
+            value: Number(latest.scores[trait]) * 10
+          }));
+
+          setOceanScores(scoresArray);
+          setMbtiType(latest.mbti);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching results:', error);
+        setLoading(false);
+      });
+  }, []);
+
   const defaultOceanData = [
     { trait: 'Openness', value: 75 },
     { trait: 'Conscientiousness', value: 68 },
@@ -12,10 +54,9 @@ const OceanResults = ({ oceanScores, mbtiType }) => {
     { trait: 'Neuroticism', value: 35 }
   ];
 
-  const oceanData = oceanScores || defaultOceanData;
+  const oceanData = oceanScores.length ? oceanScores : defaultOceanData;
   const personalityType = mbtiType || "INFP";
 
-  // MBTI descriptions mapping
   const mbtiDescriptions = {
     "INFP": {
       shortDesc: "The Mediator - Creative idealists with a strong sense of personal values and a desire to make the world a better place.",
@@ -64,6 +105,8 @@ const OceanResults = ({ oceanScores, mbtiType }) => {
     return "Your OCEAN personality profile reveals a unique combination of traits that shape how you interact with the world, process information, and approach life's challenges. Each dimension represents a spectrum of behaviors and preferences that contribute to your overall personality.";
   };
 
+  if (loading) return <div className="loading">Loading your results...</div>;
+
   return (
     <div className="ocean-results-container">
       <div className="results-header">
@@ -84,8 +127,8 @@ const OceanResults = ({ oceanScores, mbtiType }) => {
                     <span className="score-value">{item.value}%</span>
                   </div>
                   <div className="score-bar">
-                    <div 
-                      className="score-fill" 
+                    <div
+                      className="score-fill"
                       style={{ width: `${item.value}%` }}
                     ></div>
                   </div>
@@ -93,18 +136,18 @@ const OceanResults = ({ oceanScores, mbtiType }) => {
               ))}
             </div>
           </div>
-          
+
           <div className="radar-chart-container">
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart data={oceanData}>
                 <PolarGrid stroke="#3E5879" />
-                <PolarAngleAxis 
-                  dataKey="trait" 
+                <PolarAngleAxis
+                  dataKey="trait"
                   tick={{ fill: '#213555', fontSize: 12 }}
                 />
-                <PolarRadiusAxis 
-                  angle={90} 
-                  domain={[0, 100]} 
+                <PolarRadiusAxis
+                  angle={90}
+                  domain={[0, 100]}
                   tick={{ fill: '#3E5879', fontSize: 10 }}
                 />
                 <Radar
@@ -119,13 +162,13 @@ const OceanResults = ({ oceanScores, mbtiType }) => {
             </ResponsiveContainer>
           </div>
         </div>
-        
+
         <div className="ocean-description">
           <p>{getOceanDescription()}</p>
         </div>
       </div>
 
-      {/* MBTI Type */}
+      {/* MBTI Section */}
       <div className="mbti-section">
         <div className="mbti-header">
           <h2>Your Personality Type</h2>
@@ -134,7 +177,7 @@ const OceanResults = ({ oceanScores, mbtiType }) => {
         <p className="mbti-short-desc">{currentType.shortDesc}</p>
       </div>
 
-      {/* Detailed Description */}
+      {/* Details */}
       <div className="detailed-section">
         <div className="detail-card">
           <h3>Personality Description</h3>

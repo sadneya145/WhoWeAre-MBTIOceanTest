@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'; // Assuming style.css contains the custom styles
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ENTJ = () => {
   return (
@@ -26,7 +27,7 @@ const ENTJ = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/tony-stark.jpg"
+                src="https://cdn.marvel.com/content/1x/002irm_ons_inl_06_0.jpg"
                 alt="Tony Stark"
                 className="character-image"
               />
@@ -39,7 +40,7 @@ const ENTJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/miranda-priestly.jpg"
+                src="https://media.vanityfair.com/photos/576c585744d93e6e4482bb27/master/w_1440,h_960,c_limit/meryl-streep-devil-wears-prada.jpg"
                 alt="Miranda Priestly"
                 className="character-image"
               />
@@ -52,7 +53,7 @@ const ENTJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/tywin-lannister.jpg"
+                src="https://compote.slate.com/images/4bf557b0-aa86-47c7-9ae8-233fb3e55f2f.jpg?width=1200"
                 alt="Tywin Lannister"
                 className="character-image"
               />
@@ -83,7 +84,7 @@ const ENTJ = () => {
               </p>
             </div>
             <img
-              src="/images/entj-intro.jpg"
+              src="https://img.freepik.com/free-vector/follow-leader-concept-illustration_114360-10886.jpg?semt=ais_hybrid&w=740"
               alt="ENTJ Introduction Visual - a person presenting with confidence"
               className="section-image intro-image"
             />
@@ -97,11 +98,6 @@ const ENTJ = () => {
             Understanding the powerhouse behind the ENTJ drive.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/entj-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - chess pieces or leadership imagery"
-              className="section-image sw-image"
-            />
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -196,7 +192,7 @@ const ENTJ = () => {
               </ul>
             </div>
             <img
-              src="/images/entj-career.jpg"
+              src="https://static.vecteezy.com/system/resources/previews/007/630/256/non_2x/lawyer-attorney-and-justice-with-laws-scales-buildings-book-or-wooden-judge-hammer-to-consultant-in-flat-cartoon-illustration-vector.jpg"
               alt="Career paths visual - corporate offices, law, entrepreneurship"
               className="section-image career-image"
             />
@@ -210,18 +206,9 @@ const ENTJ = () => {
             Discover more about what makes ENTJs powerful and effective leaders.
           </p>
           <div className="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/IIDxXvJu7V8" // You can replace with a different relevant ENTJ video
-              title="Understanding the ENTJ Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4lAglKI3EEo?si=pgF9l2ftTMLbgCsW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace the video ID with a preferred video if needed.
-          </p>
+
         </section>
 
         {/* Famous ENTJs Section */}
@@ -232,7 +219,7 @@ const ENTJ = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/entj-famous.jpg"
+              src="https://static1.personality-database.com/famous-people/entj-famous-people.png"
               alt="Famous ENTJs visual - powerful leaders and thinkers"
               className="section-image famous-image"
             />
@@ -274,7 +261,7 @@ const ENTJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '80%'}}></div>
+                <div className="bar-fill high" style={{ width: '80%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
@@ -283,7 +270,7 @@ const ENTJ = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '90%'}}
+                  style={{ width: '90%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -291,21 +278,21 @@ const ENTJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '85%'}}></div>
+                <div className="bar-fill high" style={{ width: '85%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '35%'}}></div>
+                <div className="bar-fill low" style={{ width: '35%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '45%'}}></div>
+                <div className="bar-fill medium" style={{ width: '45%' }}></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
             </div>
@@ -323,6 +310,7 @@ const ENTJ = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

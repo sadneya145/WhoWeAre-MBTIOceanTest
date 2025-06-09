@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const INFP = () => {
   return (
@@ -26,7 +27,7 @@ const INFP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/infp-jk-rowling.jpg"
+                src="https://media.glamourmagazine.co.uk/photos/66d825f8783d04ba0b98a2d7/16:9/w_1920,h_1080,c_limit/JK%20ROWLING%20040924%20GettyImages-1061228896.jpg"
                 alt="J.K. Rowling"
                 className="character-image"
               />
@@ -38,7 +39,7 @@ const INFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/infp-princess-diana.jpg"
+                src="https://images.bauerhosting.com/legacy/media/5f4e/1083/305f/c2b6/16cf/7d0d/Princess%20Diana.jpg?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80"
                 alt="Princess Diana"
                 className="character-image"
               />
@@ -49,7 +50,7 @@ const INFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/infp-john-lennon.jpg"
+                src="https://cdn.britannica.com/27/262227-050-E8D701BC/John-Lennon-The-Beatles-1968.jpg?w=400&h=300&c=crop"
                 alt="John Lennon"
                 className="character-image"
               />
@@ -76,7 +77,7 @@ const INFP = () => {
               </p>
             </div>
             <img
-              src="/images/infp-intro.jpg"
+              src="https://media.istockphoto.com/id/1383929628/vector/childcare-stress-issues-family-parenting-couple-relationship-problems-affecting-child.jpg?s=612x612&w=0&k=20&c=uS6Es065mLYqVKMgfPu1FBtyPUdfTj0KKEHrv3ZuesY="
               alt="INFP intro"
               className="section-image intro-image"
             />
@@ -87,11 +88,7 @@ const INFP = () => {
         <section className="personality-section strengths-weaknesses-section">
           <h2 className="section-title">Strengths & Challenges</h2>
           <div className="content-with-image">
-            <img
-              src="/images/infp-strengths.jpg"
-              alt="INFP strengths"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Strengths</h3>
               <ul className="strength-list">
@@ -177,7 +174,7 @@ const INFP = () => {
               </ul>
             </div>
             <img
-              src="/images/infp-career.jpg"
+              src="https://img.freepik.com/free-vector/hand-drawn-music-notes-illustration_23-2151317638.jpg?semt=ais_items_boosted&w=740"
               alt="INFP careers"
               className="section-image career-image"
             />
@@ -192,18 +189,9 @@ const INFP = () => {
             thought.
           </p>
           <div className="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/your-infp-video-id"
-              title="INFP Personality Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-3uRUEZnuA4?si=peCOUBvJusj0ed9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Replace "your-infp-video-id" with a relevant YouTube video ID.
-          </p>
+
         </section>
 
         {/* Famous INFPs Section */}
@@ -215,7 +203,7 @@ const INFP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/infp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/infp-famous-people.png" // Placeholder for image
               alt="Famous INFPs visual - a collage of idealists, writers, and dreamers"
               className="section-image famous-image"
             />
@@ -260,7 +248,7 @@ const INFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '95%'}}
+                  style={{ width: '95%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -268,28 +256,28 @@ const INFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '55%'}}></div>
+                <div className="bar-fill medium" style={{ width: '55%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '20%'}}></div>
+                <div className="bar-fill low" style={{ width: '20%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '85%'}}></div>
+                <div className="bar-fill high" style={{ width: '85%' }}></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '60%'}}></div>
+                <div className="bar-fill medium" style={{ width: '60%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -307,6 +295,7 @@ const INFP = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

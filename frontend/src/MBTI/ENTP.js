@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'; // Assuming style.css contains the custom marine-themed styles
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ENTP = () => {
   return (
@@ -26,7 +27,7 @@ const ENTP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/entp-tony-stark.jpg"
+                src="https://static1.srcdn.com/wordpress/wp-content/uploads/2019/05/Tony-Stark-from-Iron-Man.jpg"
                 alt="Tony Stark"
                 className="character-image"
               />
@@ -38,7 +39,7 @@ const ENTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/entp-thomas-edison.jpg"
+                src="https://d3i6fh83elv35t.cloudfront.net/static/2018/10/GettyImages-538349053-1024x760.jpg"
                 alt="Thomas Edison"
                 className="character-image"
               />
@@ -51,7 +52,7 @@ const ENTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/entp-sacha-baron-cohen.jpg"
+                src="https://compote.slate.com/images/b484abd8-5ae6-47e3-bc4e-f80b31893b03.jpeg?crop=3529%2C2353%2Cx0%2Cy0"
                 alt="Sacha Baron Cohen"
                 className="character-image"
               />
@@ -82,7 +83,7 @@ const ENTP = () => {
               </p>
             </div>
             <img
-              src="/images/entp-intro.jpg"
+              src="https://media.istockphoto.com/id/1351079728/vector/millennial-girl-student-engaged-in-creative-thinking.jpg?s=612x612&w=0&k=20&c=RP4r90DUQFCgWcwsu5gmZH5EOmFmO9zLAoBKAAfziKM="
               alt="ENTP Introduction Visual - a thinker analyzing complex ideas with excitement"
               className="section-image intro-image"
             />
@@ -96,11 +97,6 @@ const ENTP = () => {
             Exploring the innovative and dynamic nature of ENTPs.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/entp-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - a lighthouse and swirling waves symbolizing insight and challenge"
-              className="section-image sw-image"
-            />
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -195,7 +191,7 @@ const ENTP = () => {
               </ul>
             </div>
             <img
-              src="/images/entp-career.jpg"
+              src="https://static.vecteezy.com/system/resources/previews/005/412/000/non_2x/public-speaker-concept-free-vector.jpg"
               alt="Career paths visual - brainstorming sessions, public speaking, innovation labs"
               className="section-image career-image"
             />
@@ -211,14 +207,7 @@ const ENTP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-entp-video-id' with an actual YouTube video ID for ENTP */}
-            <iframe
-              src="https://www.youtube.com/embed/your-entp-video-id"
-              title="Understanding the ENTP Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Gck8fW9dNoI?si=0NSB4D3Z8WkOrHKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <p className="video-note">
             *Note: Replace "your-entp-video-id" with a relevant YouTube video ID
@@ -235,7 +224,7 @@ const ENTP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/entp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/entp-famous-people.png" // Placeholder for image
               alt="Famous ENTPs visual - a collage of innovative thinkers and charismatic debaters"
               className="section-image famous-image"
             />
@@ -279,7 +268,7 @@ const ENTP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '90%'}}
+                  style={{ width: '90%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -287,28 +276,28 @@ const ENTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '25%'}}></div>
+                <div className="bar-fill low" style={{ width: '25%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '85%'}}></div>
+                <div className="bar-fill high" style={{ width: '85%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '45%'}}></div>
+                <div className="bar-fill medium" style={{ width: '45%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -325,14 +314,9 @@ const ENTP = () => {
           </p>
         </section>
 
-        {/* Footer or Closing Section */}
-        <footer className="personality-footer">
-          <p>
-            Sail confidently with the ESTP spirit — bold, adaptable, and always
-            ready to navigate the waves of life.
-          </p>
-        </footer>
+
       </div>
+      <Footer />
     </div>
   );
 };

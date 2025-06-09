@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ISTP = () => {
   return (
@@ -26,7 +27,7 @@ const ISTP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/istp-clint-eastwood.jpg"
+                src="https://cdn.britannica.com/74/172374-050-C4B36361/Clint-Eastwood-A-Fistful-of-Dollars-Sergio.jpg"
                 alt="Clint Eastwood"
                 className="character-image"
               />
@@ -38,7 +39,7 @@ const ISTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/istp-bruce-lee.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeWQLWaM18yUWvPFGwVE65KYnF2JzKebX8hw&s"
                 alt="Bruce Lee"
                 className="character-image"
               />
@@ -50,7 +51,7 @@ const ISTP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/istp-amelia-earhart.jpg"
+                src="https://th-thumbnailer.cdn-si-edu.com/mxoH01B-XzHjoQZYqdrIgmgLg5A=/1072x720/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/23/25/2325f8ab-4afd-4576-9c97-5a4d6b8389fd/dec15_n17_ameliaearhart.jpg"
                 alt="Amelia Earhart"
                 className="character-image"
               />
@@ -78,7 +79,7 @@ const ISTP = () => {
               </p>
             </div>
             <img
-              src="/images/istp-intro.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2QBc3ual4BR_XSB9eqPMJciv8kJeMCSXHGg&s"
               alt="ISTP Introduction Visual - sleek mechanical gears symbolizing skill and precision"
               className="section-image intro-image"
             />
@@ -92,11 +93,6 @@ const ISTP = () => {
             Explore the cool, adaptable, and skillful nature of ISTPs.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/istp-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - mechanical tools and calm sea representing capability and challenges"
-              className="section-image sw-image"
-            />
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -190,7 +186,7 @@ const ISTP = () => {
               </ul>
             </div>
             <img
-              src="/images/istp-career.jpg"
+              src="https://static.vecteezy.com/system/resources/previews/018/735/416/non_2x/craftsman-carpenter-illustration-on-white-background-vector.jpg"
               alt="Career paths visual - mechanical and technical tools with action"
               className="section-image career-image"
             />
@@ -206,19 +202,9 @@ const ISTP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-istp-video-id' with an actual YouTube video ID */}
-            <iframe
-              src="https://www.youtube.com/embed/your-istp-video-id"
-              title="Understanding the ISTP Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rYbp0in339U?si=CycIkvGAK2qc4Yfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-istp-video-id" with a relevant YouTube video ID
-            for ISTP content.
-          </p>
+
         </section>
         {/* Famous ISTPs Section */}
         <section className="personality-section famous-istjs-section">
@@ -229,7 +215,7 @@ const ISTP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/istp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/istp-famous-people.png" // Placeholder for image
               alt="Famous ISTPs visual - a collage of skilled and independent individuals"
               className="section-image famous-image"
             />
@@ -271,14 +257,14 @@ const ISTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '55%'}}></div>
+                <div className="bar-fill medium" style={{ width: '55%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -286,8 +272,8 @@ const ISTP = () => {
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
                 <div
-                  className="bar-fill medium-low"
-                  style={{width: '40%'}}
+                  className="bar-fill medium"
+                  style={{ width: '40%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
@@ -296,8 +282,8 @@ const ISTP = () => {
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
                 <div
-                  className="bar-fill medium-low"
-                  style={{width: '40%'}}
+                  className="bar-fill medium"
+                  style={{ width: '40%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
@@ -305,7 +291,7 @@ const ISTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '25%'}}></div>
+                <div className="bar-fill low" style={{ width: '25%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
@@ -323,6 +309,7 @@ const ISTP = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

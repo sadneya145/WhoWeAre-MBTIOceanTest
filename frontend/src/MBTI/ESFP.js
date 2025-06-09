@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'; // Assuming style.css contains the custom marine-themed styles
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ESFP = () => {
   return (
@@ -25,7 +26,7 @@ const ESFP = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/esfp-marilyn-monroe.jpg"
+                src="https://hips.hearstapps.com/hmg-prod/images/marilyn_monroe_photo_alfred_eisenstaedt_pix_inc_the_life_picture_collection_getty_images_53376357_cropped.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"
                 alt="Marilyn Monroe"
                 className="character-image"
               />
@@ -37,7 +38,7 @@ const ESFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/esfp-will-smith.jpg"
+                src="https://media.npr.org/assets/img/2021/11/10/will-smith-new-headshot-credit-lorenzo-agius_wide-e7290985cc97649f61eb4c28e84d6b272f69202d.jpg"
                 alt="Will Smith"
                 className="character-image"
               />
@@ -49,7 +50,7 @@ const ESFP = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/esfp-beyonce.jpg"
+                src="https://ichef.bbci.co.uk/news/480/cpsprodpb/a604/live/d4ca44d0-42a8-11f0-88e1-3f1b11853089.jpg.webp"
                 alt="Beyoncé"
                 className="character-image"
               />
@@ -79,7 +80,7 @@ const ESFP = () => {
               </p>
             </div>
             <img
-              src="/images/esfp-intro.jpg"
+              src="https://img.freepik.com/free-vector/hand-drawn-flat-design-people-waving-illustration_23-2149195759.jpg?semt=ais_hybrid&w=740"
               alt="ESFP Introduction Visual - a joyful dolphin leaping in the ocean"
               className="section-image intro-image"
             />
@@ -93,11 +94,7 @@ const ESFP = () => {
             Exploring the vibrant and spontaneous nature of ESFPs.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/esfp-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - a playful wave and sun symbolizing warmth and energy"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -194,7 +191,7 @@ const ESFP = () => {
               </ul>
             </div>
             <img
-              src="/images/esfp-career.jpg"
+              src="https://online.visual-paradigm.com/repository/images/25131f51-79f4-4928-b5a5-23cb5f6d4aa6/festival-illustration-design/music-performance-illustration.png"
               alt="Career paths visual - a lively concert, a vibrant classroom, a social gathering"
               className="section-image career-image"
             />
@@ -210,19 +207,8 @@ const ESFP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-esfp-video-id' with an actual YouTube video ID for ESFP */}
-            <iframe
-              src="https://www.youtube.com/embed/your-esfp-video-id"
-              title="Understanding the ESFP Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vGtpFiGYBTI?si=5Fo4Pgbsy1nRQp2x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-esfp-video-id" with a relevant YouTube video ID
-            for optimal content.
-          </p>
         </section>
 
         {/* Famous ESFPs Section */}
@@ -234,7 +220,7 @@ const ESFP = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/esfp-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/esfp-famous-people.png" // Placeholder for image
               alt="Famous ESFPs visual - a collage of lively performers and charismatic personalities"
               className="section-image famous-image"
             />
@@ -277,8 +263,8 @@ const ESFP = () => {
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
                 <div
-                  className="bar-fill medium-high"
-                  style={{width: '70%'}}
+                  className="bar-fill high"
+                  style={{ width: '70%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Medium-High</span>
@@ -286,7 +272,7 @@ const ESFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -295,7 +281,7 @@ const ESFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{width: '95%'}}
+                  style={{ width: '95%' }}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -303,14 +289,14 @@ const ESFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '80%'}}></div>
+                <div className="bar-fill high" style={{ width: '80%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '45%'}}></div>
+                <div className="bar-fill medium" style={{ width: '45%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -328,14 +314,9 @@ const ESFP = () => {
           </p>
         </section>
 
-        {/* Footer or Closing Section */}
-        <footer className="personality-footer">
-          <p>
-            Inspired by the ocean’s rhythm, ESFPs invite you to embrace life’s
-            vibrant flow. Be present, be joyful, and let your light shine!
-          </p>
-        </footer>
+
       </div>
+      <Footer />
     </div>
   );
 };

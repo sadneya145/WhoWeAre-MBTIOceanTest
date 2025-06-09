@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'; // Assuming style.css contains the custom styles
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ESFJ = () => {
   return (
@@ -26,7 +27,7 @@ const ESFJ = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/leslie-knope.jpg"
+                src="https://blog.siegfriedgroup.com/wp-content/uploads/2018/04/Leslie-Knope_3x2.jpg"
                 alt="Leslie Knope"
                 className="character-image"
               />
@@ -39,7 +40,7 @@ const ESFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/monica-geller.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgfzSc5KW5HMviERLdJeZOXp9pFlS5JOmpYg&s"
                 alt="Monica Geller"
                 className="character-image"
               />
@@ -52,7 +53,7 @@ const ESFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/molly-weasley.jpg"
+                src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/03/harry-potter-molly-weasley.jpeg?q=70&fit=contain&w=1200&h=628&dpr=1"
                 alt="Molly Weasley"
                 className="character-image"
               />
@@ -85,7 +86,7 @@ const ESFJ = () => {
               </p>
             </div>
             <img
-              src="/images/esfj-intro.jpg"
+              src="https://media.istockphoto.com/id/1412778148/vector/online-meeting.jpg?s=612x612&w=0&k=20&c=bTK4nlDMQE-MBPzxVbzGt_FJYvkVVVmitVRW17zWXiI="
               alt="ESFJ Introduction Visual - a person helping others and organizing community"
               className="section-image intro-image"
             />
@@ -99,11 +100,7 @@ const ESFJ = () => {
             Key traits that define the ESFJ personality type.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/esfj-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - heart and handshake imagery"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -206,7 +203,7 @@ const ESFJ = () => {
               </ul>
             </div>
             <img
-              src="/images/esfj-career.jpg"
+              src="https://online.visual-paradigm.com/repository/images/6748adf2-f238-4d5a-8fe4-6939312c4408/healthcare-illustration-design/hospital-illustration.png"
               alt="Career paths visual - healthcare, education, and social events"
               className="section-image career-image"
             />
@@ -221,19 +218,8 @@ const ESFJ = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace with an actual YouTube video ID about ESFJ */}
-            <iframe
-              src="https://www.youtube.com/embed/your-esfj-video-id"
-              title="Understanding the ESFJ Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/h-LKxyJE6YY?si=hbjEuipq8bD6VxlA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-esfj-video-id" with a relevant YouTube video ID
-            for the best experience.
-          </p>
         </section>
 
         {/* Famous ESFJs Section */}
@@ -245,7 +231,7 @@ const ESFJ = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/esfj-famous.jpg"
+              src="https://static1.personality-database.com/famous-people/esfj-famous-people.png"
               alt="Famous ESFJs visual - a collage of well-known personalities and characters"
               className="section-image famous-image"
             />
@@ -289,35 +275,35 @@ const ESFJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '55%'}}></div>
+                <div className="bar-fill medium" style={{ width: '55%' }}></div>
               </div>
               <span className="ocean-score-label">Moderate</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '85%'}}></div>
+                <div className="bar-fill high" style={{ width: '85%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '90%'}}></div>
+                <div className="bar-fill high" style={{ width: '90%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '80%'}}></div>
+                <div className="bar-fill high" style={{ width: '80%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '50%'}}></div>
+                <div className="bar-fill medium" style={{ width: '50%' }}></div>
               </div>
               <span className="ocean-score-label">Moderate</span>
             </div>
@@ -335,16 +321,8 @@ const ESFJ = () => {
           </p>
         </section>
 
-        {/* Call to Action/Footer */}
-        <footer className="personality-footer">
-          <p>
-            Curious about other personality types?&nbsp;
-            <a href="/explore" className="footer-link">
-              Discover Your Type!
-            </a>
-          </p>
-        </footer>
       </div>
+      <Footer />
     </div>
   );
 };

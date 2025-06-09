@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'; // Using the same marine-themed styles
 import Header from '../Pages/Header/Header';
+import Footer from '../Pages/Footer/Footer';
 
 const ISFJ = () => {
   return (
@@ -26,7 +27,7 @@ const ISFJ = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/isfj-samwise-gamgee.jpg" // Image for Samwise Gamgee
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaND4oHtjMMEALbyl4Zg-KdsXwYs85ykPEKw&s" // Image for Samwise Gamgee
                 alt="Samwise Gamgee"
                 className="character-image"
               />
@@ -39,7 +40,7 @@ const ISFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/isfj-molly-weasley.jpg" // Image for Molly Weasley
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMe7X6QwCQLWqcf-B5fCrwhJ2Myg1YYaiQyg&s" // Image for Molly Weasley
                 alt="Molly Weasley"
                 className="character-image"
               />
@@ -52,7 +53,7 @@ const ISFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/isfj-rosa-diaz.jpg" // Image for Rosa Diaz
+                src="https://ucarecdn.com/62cfcc26-7aba-4292-a577-21f031d33259/-/crop/420x420/30,0/-/preview/-/progressive/yes/-/format/auto/-/scale_crop/900x900/" // Image for Rosa Diaz
                 alt="Rosa Diaz"
                 className="character-image"
               />
@@ -85,7 +86,7 @@ const ISFJ = () => {
               </p>
             </div>
             <img
-              src="/images/isfj-intro.jpg" // Placeholder for image
+              src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37375.jpg?semt=ais_items_boosted&w=740" // Placeholder for image
               alt="ISFJ Introduction Visual - a guardian quietly watching over"
               className="section-image intro-image"
             />
@@ -100,11 +101,7 @@ const ISFJ = () => {
             protectors.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/isfj-strengths-weaknesses.jpg" // Placeholder for image
-              alt="Strengths and Weaknesses Visual - a shield representing protection and a lantern representing guidance"
-              className="section-image sw-image"
-            />
+
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -204,7 +201,7 @@ const ISFJ = () => {
               </ul>
             </div>
             <img
-              src="/images/isfj-career.jpg" // Placeholder for image
+              src="https://img.freepik.com/free-vector/teacher-concept-illustration_114360-1638.jpg?semt=ais_hybrid&w=740" // Placeholder for image
               alt="Career paths visual - healthcare, education, social work"
               className="section-image career-image"
             />
@@ -220,19 +217,9 @@ const ISFJ = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-isfj-video-id' with an actual YouTube video ID */}
-            <iframe
-              src="https://www.youtube.com/embed/your-isfj-video-id"
-              title="Understanding the ISFJ Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qS2QePBN0OE?si=uP4HOHZR5oEgS6Yu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-isfj-video-id" with a relevant YouTube video ID
-            for optimal content.
-          </p>
+
         </section>
 
         {/* Famous ISFJs Section */}
@@ -244,7 +231,7 @@ const ISFJ = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/isfj-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/isfj-famous-people.png" // Placeholder for image
               alt="Famous ISFJs visual - a collage of caring and loyal figures"
               className="section-image famous-image"
             />
@@ -286,35 +273,35 @@ const ISFJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '30%'}}></div>
+                <div className="bar-fill low" style={{ width: '30%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '90%'}}></div>
+                <div className="bar-fill high" style={{ width: '90%' }}></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '45%'}}></div>
+                <div className="bar-fill medium" style={{ width: '45%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '85%'}}></div>
+                <div className="bar-fill high" style={{ width: '85%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '35%'}}></div>
+                <div className="bar-fill medium" style={{ width: '35%' }}></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
             </div>
@@ -332,6 +319,7 @@ const ISFJ = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

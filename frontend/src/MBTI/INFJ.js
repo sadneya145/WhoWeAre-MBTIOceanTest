@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'; // Assuming style.css contains the custom marine-themed styles
 import Header from '../Pages/Header/Header';
-
+import Footer from '../Pages/Footer/Footer';
 const INFJ = () => {
   return (
     <div>
@@ -26,7 +26,7 @@ const INFJ = () => {
           <div className="character-grid">
             <div className="character-card">
               <img
-                src="/images/infj-nelson-mandela.jpg"
+                src="https://api.time.com/wp-content/uploads/2020/07/nelson-mandela.jpg"
                 alt="Nelson Mandela"
                 className="character-image"
               />
@@ -38,7 +38,7 @@ const INFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/infj-mother-teresa.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz0Pss_cOXjnes62lELQ6r1iIKbVy9Tut1dw&s"
                 alt="Mother Teresa"
                 className="character-image"
               />
@@ -50,7 +50,7 @@ const INFJ = () => {
             </div>
             <div className="character-card">
               <img
-                src="/images/infj-carl-jung.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREcAUgHOsvp5_xrveLUrKX6VRZ-JpaDPNJfA&s"
                 alt="Carl Jung"
                 className="character-image"
               />
@@ -80,7 +80,7 @@ const INFJ = () => {
               </p>
             </div>
             <img
-              src="/images/infj-intro.jpg"
+              src="https://media.istockphoto.com/id/1486091842/vector/woman-with-hands-on-her-heart-self-love-concept-happy-calm-girl-feeling-of-bliss-harmony.jpg?s=612x612&w=0&k=20&c=qs7fGo8FX07bIvdzVt0kkZsL8H7j4m7vzu6U_04Mj-g="
               alt="INFJ Introduction Visual - a person gazing thoughtfully into the horizon with a soft light"
               className="section-image intro-image"
             />
@@ -95,11 +95,6 @@ const INFJ = () => {
             INFJs.
           </p>
           <div className="content-with-image">
-            <img
-              src="/images/infj-strengths-weaknesses.jpg"
-              alt="Strengths and Weaknesses Visual - a candle flame representing warmth and a shadow representing depth"
-              className="section-image sw-image"
-            />
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -194,7 +189,7 @@ const INFJ = () => {
               </ul>
             </div>
             <img
-              src="/images/infj-career.jpg"
+              src="https://media.istockphoto.com/id/1272543982/vector/teacher-giving-lesson-to-her-students-in-classroom-teaching-concept-illustration.jpg?s=612x612&w=0&k=20&c=FTS7uba-ZbkHlZ6AaParLSMcY98msD2-J1qO2I5eFh0="
               alt="Career paths visual - classroom, writing desk, humanitarian work"
               className="section-image career-image"
             />
@@ -210,19 +205,9 @@ const INFJ = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-infj-video-id' with an actual YouTube video ID for INFJ */}
-            <iframe
-              src="https://www.youtube.com/embed/your-infj-video-id"
-              title="Understanding the INFJ Personality Type"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="personality-video"
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6kim0QlO0H0?si=EYmY7k7qdN5UXAe5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <p className="video-note">
-            *Note: Replace "your-infj-video-id" with a relevant YouTube video ID
-            for optimal content.
-          </p>
+
         </section>
 
         {/* Famous INFJs Section */}
@@ -234,7 +219,7 @@ const INFJ = () => {
           </p>
           <div className="content-with-image">
             <img
-              src="/images/infj-famous.jpg" // Placeholder for image
+              src="https://static1.personality-database.com/famous-people/infj-famous-people.png" // Placeholder for image
               alt="Famous INFJs visual - a collage of compassionate leaders and thoughtful figures"
               className="section-image famous-image"
             />
@@ -277,35 +262,35 @@ const INFJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '90%'}}></div>
+                <div className="bar-fill high" style={{ width: '90%' }}></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '80%'}}></div>
+                <div className="bar-fill high" style={{ width: '80%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{width: '20%'}}></div>
+                <div className="bar-fill low" style={{ width: '20%' }}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{width: '75%'}}></div>
+                <div className="bar-fill high" style={{ width: '75%' }}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{width: '55%'}}></div>
+                <div className="bar-fill medium" style={{ width: '55%' }}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -323,6 +308,7 @@ const INFJ = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

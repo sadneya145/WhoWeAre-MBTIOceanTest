@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Profile.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Profile = () => {
     const { email } = useParams();
@@ -31,10 +33,10 @@ const Profile = () => {
             setError(null);
             try {
                 const userRes = await axios.get(
-                    `http://localhost:5000/user/${encodeURIComponent(email)}`
+                    `https://whoweare-mbtioceantest-backend.onrender.com/user/${encodeURIComponent(email)}`
                 );
                 const quizRes = await axios.get(
-                    `http://localhost:5000/quizzes/${encodeURIComponent(email)}`
+                    `https://whoweare-mbtioceantest-backend.onrender.com/quizzes/${encodeURIComponent(email)}`
                 );
 
                 setUser(userRes.data);
@@ -78,9 +80,8 @@ const Profile = () => {
                 <div className="profile-header-no-quiz">
                     <Link to={`/home`}>
                         <img
-                            src={`https://api.dicebear.com/7.x/initials/svg?seed=${
-                                user.displayName || user.email
-                            }`}
+                            src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.displayName || user.email
+                                }`}
                             alt="User Avatar"
                             className="user-avatar-large"
                         />
@@ -95,77 +96,79 @@ const Profile = () => {
     const latestQuiz = quizzes[0];
 
     return (
-        <div className="profile-container-wrapper">
-            <div className="profile-card main-profile-section">
-                <div className="profile-left">
-                    <Link to={`/home`}>
-                        <img
-                            src={`https://api.dicebear.com/7.x/initials/svg?seed=${
-                                user.displayName || user.email
-                            }`}
-                            alt="User Avatar"
-                            className="user-avatar"
-                        />
-                    </Link>
-                    <h2 className="user-name-profile">{user.name || user.email}</h2>
-                    {/* <p className="user-email">{user.email}</p> */}
-                </div>
+        <>      <Header user={user} />
+            <div className="profile-container-wrapper">
+                <div className="profile-card main-profile-section">
+                    <div className="profile-left">
+                        <Link to={`/home`}>
+                            <img
+                                src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.displayName || user.email
+                                    }`}
+                                alt="User Avatar"
+                                className="user-avatar"
+                            />
+                        </Link>
+                        <h2 className="user-name-profile">{user.name || user.email}</h2>
+                        {/* <p className="user-email">{user.email}</p> */}
+                    </div>
 
-                <div className="profile-main">
-                    <div className="type-tags-section">
-                        <h4>Your Latest Personality Types</h4>
-                        <div className="type-tags">
-                            <div className="type-tag">
-                                <span className="tag-label">OCEAN Type:</span>
-                                <span className="tag-value">{latestQuiz.oceanTypeName || 'N/A'}</span>
-                            </div>
-                            <div className="type-tag">
-                                <span className="tag-label">MBTI Type:</span>
-                                <span className="tag-value">{latestQuiz.mbtiType || 'N/A'}</span>
+                    <div className="profile-main">
+                        <div className="type-tags-section">
+                            <h4>Your Latest Personality Types</h4>
+                            <div className="type-tags">
+                                <div className="type-tag">
+                                    <span className="tag-label">OCEAN Type:</span>
+                                    <span className="tag-value">{latestQuiz.oceanTypeName || 'N/A'}</span>
+                                </div>
+                                <div className="type-tag">
+                                    <span className="tag-label">MBTI Type:</span>
+                                    <span className="tag-value">{latestQuiz.mbtiType || 'N/A'}</span>
+                                </div>
                             </div>
                         </div>
+
+                        <hr className="divider" />
+
+                        <div className="score-section">
+                            <h4>OCEAN Trait Scores</h4>
+                            {renderScoreBars(latestQuiz.oceanScores)}
+                        </div>
+
+                        <div className="score-section">
+                            <h4>MBTI Dimension Scores</h4>
+                            {renderScoreBars(latestQuiz.mbtiScores, true)}
+                        </div>
+
+                        <Link className="full-report-btn" to={`/report/${latestQuiz._id}`}>
+                            View Full Report <i className="fas fa-arrow-right"></i>
+                        </Link>
                     </div>
+                </div>
 
-                    <hr className="divider" />
-
-                    <div className="score-section">
-                        <h4>OCEAN Trait Scores</h4>
-                        {renderScoreBars(latestQuiz.oceanScores)}
-                    </div>
-
-                    <div className="score-section">
-                        <h4>MBTI Dimension Scores</h4>
-                        {renderScoreBars(latestQuiz.mbtiScores, true)}
-                    </div>
-
-                    <Link className="full-report-btn" to={`/report/${latestQuiz._id}`}>
-                        View Full Report <i className="fas fa-arrow-right"></i>
-                    </Link>
+                <div className="profile-card history-section">
+                    <h3>Quiz History <i className="fas fa-history"></i></h3>
+                    <ul className="history-list">
+                        {quizzes.map(q => (
+                            <li key={q._id} className="history-item">
+                                <div className="history-details">
+                                    <span className="history-date">
+                                        <i className="far fa-calendar-alt"></i>{' '}
+                                        {new Date(q.timestamp).toLocaleDateString()}
+                                    </span>
+                                    <span className="history-types">
+                                        OCEAN: <strong>{q.oceanTypeName || 'N/A'}</strong> | MBTI: <strong>{q.mbtiType || 'N/A'}</strong>
+                                    </span>
+                                </div>
+                                <Link className="mini-report-btn" to={`/report/${q._id}`}>
+                                    Full Report <i className="fas fa-external-link-alt"></i>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
-
-            <div className="profile-card history-section">
-                <h3>Quiz History <i className="fas fa-history"></i></h3>
-                <ul className="history-list">
-                    {quizzes.map(q => (
-                        <li key={q._id} className="history-item">
-                            <div className="history-details">
-                                <span className="history-date">
-                                    <i className="far fa-calendar-alt"></i>{' '}
-                                    {new Date(q.timestamp).toLocaleDateString()}
-                                </span>
-                                <span className="history-types">
-                                    OCEAN: <strong>{q.oceanTypeName || 'N/A'}</strong> | MBTI: <strong>{q.mbtiType || 'N/A'}</strong>
-                                </span>
-                            </div>
-                            <Link className="mini-report-btn" to={`/report/${q._id}`}>
-                                Full Report <i className="fas fa-external-link-alt"></i>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </div>
+            <Footer />
+        </>
     );
 };
 

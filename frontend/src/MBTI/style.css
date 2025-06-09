@@ -1,20 +1,13 @@
-/* style.css */
-
-/* --- Marine Theme Color Palette ---
-* Deep Ocean Blue (Primary Dark): #213555
-* Calm Sea Blue (Secondary Blue-Gray): #3E5879
-* Sandy Shore (Light Tan/Beige): #D8C4B6
-* Seafoam/Sky (Off-White/Cream): #F5EFE7
-*/
-
 /* --- Base Styles & Body --- */
 body {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Seafoam/Sky background for the page */
-    color: #213555; /* Deep Ocean Blue for general text */
+    background-color: #f9f9f9;
+    /* Seafoam/Sky background for the page */
+    color: #213555;
+    /* Deep Ocean Blue for general text */
 }
 
 /* --- Personality Container (The Ship's Deck / Main Vessel) --- */
@@ -22,25 +15,11 @@ body {
     max-width: 1300px;
     margin: 30px auto;
     padding: 30px;
-    background-color: #FFFFFF; /* Pristine White for the main content area, like a freshly painted ship */
-    border-radius: 15px; /* Slightly more rounded for a smoother, organic feel */
-    box-shadow: 0 10px 30px rgba(33, 53, 85, 0.2); /* Deeper shadow, like light filtering through water */
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(33, 53, 85, 0.2);
     overflow: hidden;
-    position: relative; /* Needed for pseudo-elements */
-}
-
-/* Subtle wave pattern background for the container */
-.personality-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 10% 20%, rgba(62,88,121,0.05) 0%, transparent 70%),
-                radial-gradient(circle at 90% 80%, rgba(216,196,182,0.1) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: -1; /* Place behind content */
+    position: relative;
 }
 
 
@@ -49,53 +28,41 @@ body {
     text-align: center;
     padding-bottom: 25px;
     margin-bottom: 30px;
-    border-bottom: 3px solid #D8C4B6; /* Sandy Shore line separating header from content */
+    border-bottom: 3px solid #D8C4B6;
+    /* Sandy Shore line separating header from content */
     position: relative;
-    overflow: hidden; /* To contain wave effect */
-}
-
-.personality-header::after {
-    content: '';
-    position: absolute;
-    bottom: -15px; /* Position slightly below the border */
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(to right, #3E5879 0%, transparent 20%, transparent 80%, #3E5879 100%);
-    background-size: 200% 100%; /* For animating */
-    animation: gentleWave 15s infinite linear; /* A gentle, continuous wave motion */
-    opacity: 0.1;
-}
-
-@keyframes gentleWave {
-    0% { background-position: 0% 0%; }
-    100% { background-position: -200% 0%; }
+    overflow: hidden;
+    /* To contain wave effect */
 }
 
 
 .personality-title {
     font-size: 3.5em;
-    color: #213555; /* Deep Ocean Blue */
+    color: #213555;
     margin-bottom: 10px;
-    font-weight: 800; /* Stronger presence */
+    font-weight: 800;
     letter-spacing: -1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.05); /* Subtle depth */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .personality-subtitle {
     font-size: 1.4em;
-    color: #3E5879; /* Calm Sea Blue */
+    color: #3E5879;
+    /* Calm Sea Blue */
     font-style: italic;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px; /* Ensure subtitle stays within bounds */
+    padding: 0 20px;
+    /* Ensure subtitle stays within bounds */
 }
 
 /* --- Section Styling (Layers of the Ocean) --- */
 .personality-section {
     padding: 40px 0;
-    border-bottom: 1px dashed rgba(62, 88, 121, 0.3); /* Lighter dashed line like breaking waves */
+    border-bottom: 1px dashed rgba(62, 88, 121, 0.3);
+    /* Lighter dashed line like breaking waves */
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 
 .personality-section:last-child {
@@ -105,9 +72,9 @@ body {
 
 .section-title {
     font-size: 2.8em;
-    color: #213555; /* Deep Ocean Blue */
+    color: #213555;
+    /* Deep Ocean Blue */
     text-align: center;
-    margin-bottom: 25px;
     position: relative;
     padding-bottom: 15px;
     font-weight: 700;
@@ -119,22 +86,26 @@ body {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 100px; /* Wider underline */
-    height: 5px; /* Thicker underline */
-    background-color: #3E5879; /* Calm Sea Blue underline */
+    width: 100px;
+    /* Wider underline */
+    height: 5px;
+    /* Thicker underline */
+    background-color: #3E5879;
+    /* Calm Sea Blue underline */
     border-radius: 3px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .section-description {
     font-size: 1.2em;
-    color: #3E5879; /* Calm Sea Blue */
+    color: #3E5879;
+    /* Calm Sea Blue */
     text-align: center;
-    margin-bottom: 40px;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    font-weight: 300; /* Lighter font weight for descriptive text */
+    font-weight: 300;
+    /* Lighter font weight for descriptive text */
 }
 
 .subsection-title {
@@ -142,15 +113,18 @@ body {
     color: #213555;
     margin-top: 35px;
     margin-bottom: 18px;
-    border-left: 6px solid #D8C4B6; /* Sandy Shore accent */
+    border-left: 6px solid #e0c8b7;
+    /* Sandy Shore accent */
     padding-left: 20px;
     font-weight: 600;
     position: relative;
 }
+
 .subsection-title::before {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="%233E5879"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>'); /* Small info icon */
+    /* Small info icon */
     position: absolute;
-    left: -10px; /* Adjust to align with border */
+    left: -10px;
+    /* Adjust to align with border */
     top: 50%;
     transform: translateY(-50%);
     opacity: 0.8;
@@ -161,7 +135,8 @@ body {
 .content-with-image {
     display: flex;
     align-items: center;
-    gap: 50px; /* Increased gap for more breathing room */
+    gap: 50px;
+    /* Increased gap for more breathing room */
     padding: 25px 0;
 }
 
@@ -173,22 +148,24 @@ body {
 
 .content-with-image .text-content p {
     margin-bottom: 18px;
-    text-align: justify; /* Justified text for a cleaner block */
+    text-align: justify;
+    /* Justified text for a cleaner block */
 }
 
 .content-with-image .section-image {
     flex-shrink: 0;
-    width: 450px; /* Slightly larger images */
+    width: 500px;
+    /* Slightly larger images */
     height: 320px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
-    border: 3px solid #D8C4B6; /* Sandy Shore border */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease-out;
 }
 
 .content-with-image .section-image:hover {
-    transform: scale(1.02); /* Gentle zoom effect on hover */
+    transform: scale(1.02);
+    /* Gentle zoom effect on hover */
 }
 
 /* --- Responsive Image Ordering --- */
@@ -198,57 +175,69 @@ body {
         text-align: center;
         gap: 30px;
     }
+
     .content-with-image .section-image {
         width: 90%;
         height: auto;
         margin-bottom: 0;
     }
+
     .content-with-image.reverse-on-mobile {
         flex-direction: column-reverse;
     }
+
     .content-with-image .text-content p {
-        text-align: left; /* Keep text left-aligned on mobile if desired */
+        text-align: left;
+        /* Keep text left-aligned on mobile if desired */
     }
 }
 
 /* --- Character Showcase (Coastal Figures) --- */
 .character-showcase {
-    background-color: #F5EFE7; /* Seafoam/Sky background for this section */
     padding: 50px 30px;
     margin: -30px -30px 40px -30px;
     border-radius: 15px 15px 0 0;
-    border-bottom: 5px solid #3E5879; /* Stronger bottom border */
+    border-bottom: 5px solid #3E5879;
+    /* Stronger bottom border */
 }
 
 .character-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px; /* Increased gap */
+    gap: 40px;
+    /* Increased gap */
     margin-top: 30px;
 }
 
 .character-card {
     background-color: #FFFFFF;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(33, 53, 85, 0.1); /* Subtle shadow */
+    box-shadow: 0 6px 20px rgba(33, 53, 85, 0.1);
+    /* Subtle shadow */
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border: 2px solid transparent; /* Initial transparent border */
+    border: 2px solid transparent;
+    /* Initial transparent border */
 }
 
 .character-card:hover {
-    transform: translateY(-10px); /* Lift effect */
-    box-shadow: 0 12px 35px rgba(33, 53, 85, 0.25); /* More pronounced shadow */
-    border-color: #3E5879; /* Calm Sea Blue border on hover */
+    transform: translateY(-10px);
+    /* Lift effect */
+    box-shadow: 0 12px 35px rgba(33, 53, 85, 0.25);
+    /* More pronounced shadow */
+    border-color: #3E5879;
+    /* Calm Sea Blue border on hover */
 }
 
 .character-image {
     width: 100%;
-    height: 280px; /* Taller images */
+    height: 280px;
+    /* Taller images */
     object-fit: cover;
     display: block;
-    border-bottom: 3px solid #D8C4B6; /* Sandy Shore line below image */
+    border-bottom: 3px solid #D8C4B6;
+    /* Sandy Shore line below image */
 }
 
 .character-name {
@@ -262,7 +251,8 @@ body {
     font-size: 1em;
     color: #3E5879;
     padding: 0 20px 25px;
-    text-align: left; /* Align description left within card */
+    text-align: left;
+    /* Align description left within card */
 }
 
 /* --- Strengths & Weaknesses (Navigational Buoys) --- */
@@ -290,15 +280,18 @@ body {
 }
 
 .strength-list .icon {
-    color: #4CAF50; /* Standard Green for success, like calm waters */
+    color: #4CAF50;
+    /* Standard Green for success, like calm waters */
     font-size: 1.6em;
     margin-right: 12px;
     font-weight: bold;
-    line-height: 1; /* Align icon better */
+    line-height: 1;
+    /* Align icon better */
 }
 
 .weakness-list .icon {
-    color: #F44336; /* Standard Red for caution, like stormy waters */
+    color: #F44336;
+    /* Standard Red for caution, like stormy waters */
     font-size: 1.6em;
     margin-right: 12px;
     font-weight: bold;
@@ -321,40 +314,46 @@ body {
 }
 
 .career-list li {
-    background-color: #F5EFE7; /* Seafoam/Sky background */
+    background-color: #F5EFE7;
+    /* Seafoam/Sky background */
     padding: 15px 25px;
-    border-left: 6px solid #3E5879; /* Calm Sea Blue accent, like a sturdy pier */
+    border-left: 6px solid #3E5879;
+    /* Calm Sea Blue accent, like a sturdy pier */
     border-radius: 8px;
     font-size: 1.1em;
     color: #213555;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .career-list li:hover {
-    background-color: #D8C4B6; /* Sandy Shore on hover */
-    transform: translateX(5px); /* Gentle push effect */
+    background-color: #D8C4B6;
+    /* Sandy Shore on hover */
+    transform: translateX(5px);
+    /* Gentle push effect */
 }
 
 
 /* --- Video Section (Ocean Depths) --- */
 .video-wrapper {
     position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
+    padding-bottom: 315px;
+    width: 560px;
     height: 0;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Deeper shadow for depth */
-    border: 3px solid #3E5879; /* Calm Sea Blue border */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Deeper shadow for depth */
+    border: 3px solid #3E5879;
+    /* Calm Sea Blue border */
+    align-self: center;
+    justify-self: center;
 }
 
 .personality-video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     border: none;
 }
 
@@ -364,8 +363,8 @@ body {
     color: #3E5879;
     margin-top: 20px;
     font-style: italic;
-    background-color: rgba(216, 196, 182, 0.3); /* Transparent sandy shore background */
-    padding: 10px 15px;
+    background-color: rgba(216, 196, 182, 0.3);
+    /* Transparent sandy shore background */
     border-radius: 8px;
 }
 
@@ -377,7 +376,8 @@ body {
 }
 
 .famous-list li {
-    font-size: 1.15em; /* Slightly larger text */
+    font-size: 1.15em;
+    /* Slightly larger text */
     margin-bottom: 12px;
     padding-left: 30px;
     position: relative;
@@ -389,24 +389,29 @@ body {
 }
 
 .famous-list li::before {
-    content: '★'; /* Star icon as a beacon */
-    color: #D8C4B6; /* Sandy Shore color */
+    content: '★';
+    /* Star icon as a beacon */
+    color: #D8C4B6;
+    /* Sandy Shore color */
     font-size: 1.4em;
     position: absolute;
     left: 0;
     top: -2px;
-    line-height: 1; /* Align with text */
-    text-shadow: 0 0 5px rgba(216, 196, 182, 0.5); /* Glowing effect */
+    line-height: 1;
+    /* Align with text */
+    text-shadow: 0 0 5px rgba(216, 196, 182, 0.5);
+    /* Glowing effect */
 }
 
 
 /* --- OCEAN Mapping Section (Oceanic Currents) --- */
 .ocean-mapping-section {
-    background-color: #F5EFE7; /* Seafoam/Sky background */
+    /* Seafoam/Sky background */
     padding: 50px 30px;
     margin: 40px -30px -30px -30px;
     border-radius: 0 0 15px 15px;
-    border-top: 5px solid #3E5879; /* Stronger top border */
+    border-top: 5px solid #3E5879;
+    /* Stronger top border */
 }
 
 .ocean-traits {
@@ -421,10 +426,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: rgba(216, 196, 182, 0.2); /* Light transparent background for each bar container */
+    background-color: rgba(246, 232, 223, 0.2);
+    /* Light transparent background for each bar container */
     padding: 15px;
     border-radius: 10px;
-    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05); /* Inner shadow for depth */
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+    /* Inner shadow for depth */
 }
 
 .ocean-label {
@@ -436,18 +443,23 @@ body {
 
 .bar-bg {
     width: 100%;
-    background-color: #D8C4B6; /* Sandy Shore color for the empty part of the bar */
-    height: 22px; /* Thicker bars */
-    border-radius: 11px; /* More rounded ends */
+    background-color: #f2e2d7;
+    /* Sandy Shore color for the empty part of the bar */
+    height: 22px;
+    /* Thicker bars */
+    border-radius: 11px;
+    /* More rounded ends */
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Subtle inner shadow */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Subtle inner shadow */
 }
 
 .bar-fill {
     height: 100%;
     border-radius: 11px 0 0 11px;
-    transition: width 1.2s ease-out; /* Slower, more fluid transition */
+    transition: width 1.2s ease-out;
+    /* Slower, more fluid transition */
     position: relative;
 }
 
@@ -456,21 +468,29 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 20px; /* Small gradient at the end of the fill */
+    width: 20px;
+    /* Small gradient at the end of the fill */
     height: 100%;
-    background: linear-gradient(to left, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.3), transparent);
 }
 
 .bar-fill.low {
-    background: linear-gradient(to right, #F44336, #FF9800); /* Red to Orange, like setting sun on horizon */
+    background: linear-gradient(to right, #F44336, #FF9800);
+    /* Red to Orange, like setting sun on horizon */
 }
 
 .bar-fill.medium {
-    background: linear-gradient(to right, #FFC107, #FFEB3B); /* Yellow to brighter yellow, like coastal sunlight */
+    background: linear-gradient(to right, #df8107, #FFEB3B);
+    /* Yellow to brighter yellow, like coastal sunlight */
 }
 
 .bar-fill.high {
-    background: linear-gradient(to right, #4CAF50, #8BC34A); /* Green to lighter green, flourishing marine life */
+    background: linear-gradient(to right, #36ab39, #80c62f);
+    /* Green to lighter green, flourishing marine life */
+}
+
+.bar-fill.very-high {
+    background: linear-gradient(to right, rgb(8, 135, 8), rgb(35, 212, 35));
 }
 
 .ocean-score-label {
@@ -488,12 +508,14 @@ body {
     max-width: 950px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(62, 88, 121, 0.08); /* Very light, transparent blue-gray */
+    background-color: rgba(62, 88, 121, 0.08);
+    /* Very light, transparent blue-gray */
     padding: 25px;
     border-radius: 10px;
-    border-left: 8px solid #3E5879; /* Stronger Calm Sea Blue border */
+    border-left: 8px solid #3E5879;
+    /* Stronger Calm Sea Blue border */
     line-height: 1.7;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .ocean-note strong {
@@ -506,7 +528,8 @@ body {
     text-align: center;
     padding-top: 30px;
     margin-top: 40px;
-    border-top: 3px solid #D8C4B6; /* Sandy Shore line */
+    border-top: 3px solid #D8C4B6;
+    /* Sandy Shore line */
     font-size: 1.15em;
     color: #3E5879;
     position: relative;
@@ -515,33 +538,43 @@ body {
 .personality-footer::before {
     content: '';
     position: absolute;
-    top: -15px; /* Position slightly above the border */
+    top: -15px;
+    /* Position slightly above the border */
     left: 0;
     width: 100%;
     height: 30px;
     background: linear-gradient(to left, #3E5879 0%, transparent 20%, transparent 80%, #3E5879 100%);
-    background-size: 200% 100%; /* For animating */
-    animation: gentleWaveReverse 15s infinite linear; /* Wave motion in reverse */
+    background-size: 200% 100%;
+    /* For animating */
+    animation: gentleWaveReverse 15s infinite linear;
+    /* Wave motion in reverse */
     opacity: 0.1;
 }
 
 @keyframes gentleWaveReverse {
-    0% { background-position: -100% 0%; }
-    100% { background-position: 100% 0%; }
+    0% {
+        background-position: -100% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
 }
 
 
 .footer-link {
-    color: #213555; /* Deep Ocean Blue */
+    color: #213555;
+    /* Deep Ocean Blue */
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .footer-link:hover {
-    color: #3E5879; /* Calm Sea Blue on hover */
+    color: #3E5879;
+    /* Calm Sea Blue on hover */
     text-decoration: underline;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 /* --- Responsive Adjustments (Adapting to the Tides) --- */
@@ -574,7 +607,8 @@ body {
     }
 
     .character-image {
-        height: 200px; /* Adjust height for smaller screens */
+        height: 200px;
+        /* Adjust height for smaller screens */
     }
 
     .content-with-image .section-image {
@@ -602,7 +636,8 @@ body {
     }
 
     .bar-bg {
-        height: 18px; /* Slightly thinner bars */
+        height: 18px;
+        /* Slightly thinner bars */
     }
 }
 
@@ -631,7 +666,9 @@ body {
         padding-left: 15px;
         border-left-width: 4px;
     }
+
     .subsection-title::before {
-        display: none; /* Hide icon on very small screens */
+        display: none;
+        /* Hide icon on very small screens */
     }
 }
