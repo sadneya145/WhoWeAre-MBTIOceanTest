@@ -120,7 +120,7 @@ const OceanQuiz = () => {
 const handleSubmit = async () => {
   setIsSubmitting(true);
   try {
-    const response = await fetch('http://localhost:4000/quiz', {
+    const response = await fetch('https://whoweare-mbtioceantest-results.onrender.com/quiz', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 

@@ -17,7 +17,7 @@ const OceanResults = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:4000/results')
+    fetch('https://whoweare-mbtioceantest-results.onrender.com/results')
       .then(res => res.json())
       .then(data => {
         if (data && data.length > 0) {

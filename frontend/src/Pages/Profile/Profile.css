@@ -7,6 +7,16 @@
   padding: 0;
 } */
 
+.hidden-pdf-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 800px;
+  background: white;
+  padding: 20px;
+}
+
+
 /* Main Container */
 .profile-container-wrapper {
   padding: 3rem 1.5rem;
