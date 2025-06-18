@@ -69,6 +69,29 @@ def get_results():
     except Exception as e:
         print(f"Error fetching results: {e}")
         return jsonify({'error': 'Could not fetch results'}), 500
+    
+@app.route('/quizzes/<email>', methods=['GET'])
+def get_user_quizzes(email):
+    try:
+        user_quizzes = list(
+            results_collection.find({'email': email}).sort('submitted_at', -1)
+        )
+        # Convert ObjectId to string and format date if needed
+        for quiz in user_quizzes:
+            quiz['_id'] = str(quiz['_id'])
+            quiz['timestamp'] = quiz['submitted_at'].isoformat()
+            quiz['oceanScores'] = quiz['scores']  # normalize
+            quiz['mbtiScores'] = {
+                "MBTI": quiz.get('mbti', 'N/A')  # fallback
+            }
+            quiz['oceanTypeName'] = quiz['cluster']['name']
+            quiz['mbtiType'] = quiz['mbti']
+        
+        return jsonify(user_quizzes)
+    except Exception as e:
+        print(f"Error fetching quizzes for {email}: {e}")
+        return jsonify({'error': 'Could not fetch user quizzes'}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=4000)

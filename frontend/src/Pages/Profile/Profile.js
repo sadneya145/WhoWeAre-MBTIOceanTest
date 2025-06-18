@@ -39,22 +39,29 @@ const Profile = () => {
         fetchData();
     }, [email]);
 
-    const renderTraitCards = (scores) => {
+    const renderScoreGraph = (scores) => {
         if (!scores || Object.keys(scores).length === 0) {
             return <p className="no-scores-message">No scores available.</p>;
         }
 
+        const scoreArray = Object.entries(scores).map(([trait, value]) => ({
+            trait,
+            value,
+        }));
+
         return (
-            <div className="trait-grid">
-                {Object.entries(scores).map(([key, value]) => (
-                    <div key={key} className="trait-card">
-                        <div className="trait-icon">{key[0]}</div>
-                        <div className="trait-info">
-                            <h4>{key}</h4>
-                            <div className="trait-bar-container">
-                                <div className="trait-bar" style={{ width: `${value}%` }}></div>
-                            </div>
-                            <p>{value}%</p>
+            <div className="scores-list">
+                {scoreArray.map((item, index) => (
+                    <div key={index} className="score-item">
+                        <div className="score-label">
+                            <span className="trait-name">{item.trait}</span>
+                            <span className="score-value">{item.value}%</span>
+                        </div>
+                        <div className="score-bar">
+                            <div
+                                className="score-fill"
+                                style={{ width: `${item.value}%` }}
+                            ></div>
                         </div>
                     </div>
                 ))}
@@ -73,6 +80,7 @@ const Profile = () => {
             <Header user={user} />
             <div className="profile-container-wrapper">
                 <div className="profile-grid">
+
                     <div className="profile-card user-info-card">
                         <img
                             src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.displayName || user.email}`}
@@ -80,7 +88,7 @@ const Profile = () => {
                             className="user-avatar-big"
                         />
                         <h2>{user.name || user.email}</h2>
-                        <p className="user-email-subtext">{user.email}</p>
+                        {/* <p className="user-email-subtext">{user.email}</p> */}
                     </div>
 
                     <div className="profile-card type-summary-card">
@@ -95,19 +103,21 @@ const Profile = () => {
                                 <span className="value">{latestQuiz?.mbtiType || 'N/A'}</span>
                             </div>
                         </div>
-                        <Link className="full-report-btn" to={`/report/${latestQuiz?._id}`}>
-                            View Full Report →
-                        </Link>
+                        {latestQuiz?._id && (
+                            <Link className="full-report-btn" to={`/report/${latestQuiz._id}`}>
+                                View Full Report →
+                            </Link>
+                        )}
                     </div>
 
                     <div className="profile-card score-section">
                         <h3>OCEAN Trait Scores</h3>
-                        {renderTraitCards(latestQuiz?.oceanScores)}
+                        {renderScoreGraph(latestQuiz?.oceanScores)}
                     </div>
 
                     <div className="profile-card score-section">
                         <h3>MBTI Dimension Scores</h3>
-                        {renderTraitCards(latestQuiz?.mbtiScores)}
+                        {renderScoreGraph(latestQuiz?.mbtiScores)}
                     </div>
 
                     <div className="profile-card history-section">
@@ -117,7 +127,9 @@ const Profile = () => {
                                 <li key={q._id} className="history-item">
                                     <div className="history-info">
                                         <span>{new Date(q.timestamp).toLocaleDateString()}</span>
-                                        <span>OCEAN: <strong>{q.oceanTypeName}</strong> | MBTI: <strong>{q.mbtiType}</strong></span>
+                                        <span>
+                                            OCEAN: <strong>{q.oceanTypeName}</strong> | MBTI: <strong>{q.mbtiType}</strong>
+                                        </span>
                                     </div>
                                     <Link to={`/report/${q._id}`} className="mini-report-btn">
                                         View Report →
@@ -126,6 +138,7 @@ const Profile = () => {
                             ))}
                         </ul>
                     </div>
+
                 </div>
             </div>
             <Footer />

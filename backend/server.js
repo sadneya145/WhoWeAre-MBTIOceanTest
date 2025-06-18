@@ -157,79 +157,79 @@ app.get("/user/:email", async (req, res) => {
 
 // ---------------- QUIZ SYSTEM ------------------
 
-function calculateMBTI(oceanScores) {
-  return {
-    I_E: oceanScores.E,
-    N_S: oceanScores.O,
-    F_T: oceanScores.A,
-    J_P: oceanScores.C,
-  };
-}
+// function calculateMBTI(oceanScores) {
+//   return {
+//     I_E: oceanScores.E,
+//     N_S: oceanScores.O,
+//     F_T: oceanScores.A,
+//     J_P: oceanScores.C,
+//   };
+// }
 
-function determineMBTI(mbtiScores) {
-  return (
-    (mbtiScores.I_E > 50 ? "E" : "I") +
-    (mbtiScores.N_S > 50 ? "N" : "S") +
-    (mbtiScores.F_T > 50 ? "F" : "T") +
-    (mbtiScores.J_P > 50 ? "J" : "P")
-  );
-}
+// function determineMBTI(mbtiScores) {
+//   return (
+//     (mbtiScores.I_E > 50 ? "E" : "I") +
+//     (mbtiScores.N_S > 50 ? "N" : "S") +
+//     (mbtiScores.F_T > 50 ? "F" : "T") +
+//     (mbtiScores.J_P > 50 ? "J" : "P")
+//   );
+// }
 
-function getCluster(oceanScores) {
-  const { O, C, E, A, N } = oceanScores;
-  const total = O + C + E + A + N;
-  const avg = total / 5;
-  const cluster = avg > 75 ? 1 : avg > 60 ? 2 : avg > 45 ? 3 : avg > 30 ? 4 : 5;
-  const names = {
-    1: "The Idealist",
-    2: "The Analyst",
-    3: "The Realist",
-    4: "The Mediator",
-    5: "The Explorer",
-  };
-  return { cluster, typeName: names[cluster] };
-}
+// function getCluster(oceanScores) {
+//   const { O, C, E, A, N } = oceanScores;
+//   const total = O + C + E + A + N;
+//   const avg = total / 5;
+//   const cluster = avg > 75 ? 1 : avg > 60 ? 2 : avg > 45 ? 3 : avg > 30 ? 4 : 5;
+//   const names = {
+//     1: "The Idealist",
+//     2: "The Analyst",
+//     3: "The Realist",
+//     4: "The Mediator",
+//     5: "The Explorer",
+//   };
+//   return { cluster, typeName: names[cluster] };
+// }
 
-app.post("/quiz/submit", async (req, res) => {
-  const { email, oceanScores } = req.body;
+// app.post("/quiz/submit", async (req, res) => {
+//   const { email, oceanScores } = req.body;
 
-  try {
-    const mbtiScores = calculateMBTI(oceanScores);
-    const mbtiType = determineMBTI(mbtiScores);
-    const { cluster, typeName } = getCluster(oceanScores);
+//   try {
+//     const mbtiScores = calculateMBTI(oceanScores);
+//     const mbtiType = determineMBTI(mbtiScores);
+//     const { cluster, typeName } = getCluster(oceanScores);
 
-    const quiz = await Quiz.create({
-      email,
-      oceanScores,
-      oceanCluster: cluster,
-      oceanTypeName: typeName,
-      mbtiScores,
-      mbtiType,
-    });
+//     const quiz = await Quiz.create({
+//       email,
+//       oceanScores,
+//       oceanCluster: cluster,
+//       oceanTypeName: typeName,
+//       mbtiScores,
+//       mbtiType,
+//     });
 
-    res.status(200).json({ success: true, quizId: quiz._id });
-  } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
-  }
-});
+//     res.status(200).json({ success: true, quizId: quiz._id });
+//   } catch (err) {
+//     res.status(500).json({ success: false, error: err.message });
+//   }
+// });
 
-app.get("/quiz/history/:email", async (req, res) => {
-  try {
-    const quizzes = await Quiz.find({ email: req.params.email }).sort({ timestamp: -1 });
-    res.json(quizzes);
-  } catch (err) {
-    res.status(500).json({ error: "Could not fetch history" });
-  }
-});
+// app.get("/quiz/history/:email", async (req, res) => {
+//   try {
+//     const quizzes = await Quiz.find({ email: req.params.email }).sort({ timestamp: -1 });
+//     res.json(quizzes);
+//   } catch (err) {
+//     res.status(500).json({ error: "Could not fetch history" });
+//   }
+// });
 
-app.get("/quiz/detail/:id", async (req, res) => {
-  try {
-    const quiz = await Quiz.findById(req.params.id);
-    res.json(quiz);
-  } catch (err) {
-    res.status(500).json({ error: "Quiz not found" });
-  }
-});
+// app.get("/quiz/detail/:id", async (req, res) => {
+//   try {
+//     const quiz = await Quiz.findById(req.params.id);
+//     res.json(quiz);
+//   } catch (err) {
+//     res.status(500).json({ error: "Quiz not found" });
+//   }
+// });
 
 
 
@@ -247,14 +247,14 @@ app.get("/quiz/detail/:id", async (req, res) => {
 // });
 
 // Get quizzes for a user by email
-app.get("/quizzes/:email", async (req, res) => {
-  try {
-    const quizzes = await Quiz.find({ email: req.params.email });
-    res.json(quizzes);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+// app.get("/quizzes/:email", async (req, res) => {
+//   try {
+//     const quizzes = await Quiz.find({ email: req.params.email });
+//     res.json(quizzes);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
