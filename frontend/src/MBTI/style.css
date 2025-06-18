@@ -1,68 +1,100 @@
 /* --- Base Styles & Body --- */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    /* Seafoam/Sky background for the page */
+    background: linear-gradient(135deg, #f9f9f9 0%, #f0f4f8 100%);
     color: #213555;
-    /* Deep Ocean Blue for general text */
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Smooth Scrolling --- */
+html {
+    scroll-behavior: smooth;
 }
 
 /* --- Personality Container (The Ship's Deck / Main Vessel) --- */
 .personality-container {
-    max-width: 1300px;
-    margin: 30px auto;
-    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
     background-color: #FFFFFF;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(33, 53, 85, 0.2);
+    border-radius: 0;
+    box-shadow: none;
     overflow: hidden;
     position: relative;
 }
 
-
-/* --- Header (The Horizon Line) --- */
+/* --- Header (Hero Section) --- */
 .personality-header {
     text-align: center;
-    padding-bottom: 25px;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #D8C4B6;
-    /* Sandy Shore line separating header from content */
+    padding: 80px 40px 60px;
+    margin-bottom: 0;
+    background: linear-gradient(135deg, #213555 0%, #3E5879 50%, #4a6fa5 100%);
+    color: white;
     position: relative;
     overflow: hidden;
-    /* To contain wave effect */
+    border: none;
 }
 
+.personality-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    animation: floatPattern 20s linear infinite;
+}
+
+@keyframes floatPattern {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-60px) translateY(-60px); }
+}
 
 .personality-title {
-    font-size: 3.5em;
-    color: #213555;
-    margin-bottom: 10px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: white;
+    margin-bottom: 20px;
     font-weight: 800;
-    letter-spacing: -1px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    letter-spacing: -1.5px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
 }
 
 .personality-subtitle {
-    font-size: 1.4em;
-    color: #3E5879;
-    /* Calm Sea Blue */
-    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    font-style: normal;
+    font-weight: 300;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-    /* Ensure subtitle stays within bounds */
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
 }
 
-/* --- Section Styling (Layers of the Ocean) --- */
+/* --- Section Styling (Modern Cards) --- */
 .personality-section {
-    padding: 40px 0;
-    border-bottom: 1px dashed rgba(62, 88, 121, 0.3);
-    /* Lighter dashed line like breaking waves */
-    margin-bottom: 20px;
-    margin-left: 50px;
+    padding: 80px 40px;
+    border-bottom: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    position: relative;
+}
+
+.personality-section:nth-child(even) {
+    background-color: #fafbfc;
 }
 
 .personality-section:last-child {
@@ -71,13 +103,14 @@ body {
 }
 
 .section-title {
-    font-size: 2.8em;
+    font-size: clamp(2rem, 4vw, 3rem);
     color: #213555;
-    /* Deep Ocean Blue */
     text-align: center;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
 }
 
 .section-title::after {
@@ -86,216 +119,198 @@ body {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 100px;
-    /* Wider underline */
-    height: 5px;
-    /* Thicker underline */
-    background-color: #3E5879;
-    /* Calm Sea Blue underline */
-    border-radius: 3px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #3E5879, #4a6fa5);
+    border-radius: 2px;
 }
 
 .section-description {
-    font-size: 1.2em;
+    font-size: 1.25rem;
     color: #3E5879;
-    /* Calm Sea Blue */
     text-align: center;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 50px;
     font-weight: 300;
-    /* Lighter font weight for descriptive text */
+    line-height: 1.6;
 }
 
 .subsection-title {
-    font-size: 2em;
+    font-size: 2rem;
     color: #213555;
-    margin-top: 35px;
-    margin-bottom: 18px;
-    border-left: 6px solid #e0c8b7;
-    /* Sandy Shore accent */
-    padding-left: 20px;
+    margin: 50px 0 25px;
     font-weight: 600;
     position: relative;
+    padding-left: 0;
+    border-left: none;
 }
 
 .subsection-title::before {
-    /* Small info icon */
-    position: absolute;
-    left: -10px;
-    /* Adjust to align with border */
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.8;
+    display: none;
 }
 
-
-/* --- Content with Image Layout (Tides and Shorelines) --- */
+/* --- Content with Image Layout (Modern Grid) --- */
 .content-with-image {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 50px;
-    /* Increased gap for more breathing room */
-    padding: 25px 0;
+    gap: 60px;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .content-with-image .text-content {
-    flex: 1;
-    font-size: 1.1em;
+    font-size: 1.125rem;
     color: #3E5879;
+    line-height: 1.7;
 }
 
 .content-with-image .text-content p {
-    margin-bottom: 18px;
-    text-align: justify;
-    /* Justified text for a cleaner block */
+    margin-bottom: 24px;
+    text-align: left;
 }
 
 .content-with-image .section-image {
-    flex-shrink: 0;
-    width: 500px;
-    /* Slightly larger images */
-    height: 320px;
+    width: 100%;
+    height: 350px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.4s ease-out;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(33, 53, 85, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .content-with-image .section-image:hover {
-    transform: scale(1.02);
-    /* Gentle zoom effect on hover */
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(33, 53, 85, 0.25);
 }
 
-/* --- Responsive Image Ordering --- */
-@media (max-width: 960px) {
-    .content-with-image {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .content-with-image .section-image {
-        width: 90%;
-        height: auto;
-        margin-bottom: 0;
-    }
-
-    .content-with-image.reverse-on-mobile {
-        flex-direction: column-reverse;
-    }
-
-    .content-with-image .text-content p {
-        text-align: left;
-        /* Keep text left-aligned on mobile if desired */
-    }
-}
-
-/* --- Character Showcase (Coastal Figures) --- */
+/* --- Character Showcase (Hero Grid) --- */
 .character-showcase {
-    padding: 50px 30px;
-    margin: -30px -30px 40px -30px;
-    border-radius: 15px 15px 0 0;
-    border-bottom: 5px solid #3E5879;
-    /* Stronger bottom border */
+    padding: 80px 40px;
+    margin: 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 0;
+    border-bottom: none;
 }
 
 .character-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
-    /* Increased gap */
-    margin-top: 30px;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .character-card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(33, 53, 85, 0.1);
-    /* Subtle shadow */
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(33, 53, 85, 0.08);
     overflow: hidden;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border: 2px solid transparent;
-    /* Initial transparent border */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    position: relative;
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #3E5879, #4a6fa5);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.character-card:hover::before {
+    transform: scaleX(1);
 }
 
 .character-card:hover {
-    transform: translateY(-10px);
-    /* Lift effect */
-    box-shadow: 0 12px 35px rgba(33, 53, 85, 0.25);
-    /* More pronounced shadow */
-    border-color: #3E5879;
-    /* Calm Sea Blue border on hover */
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(33, 53, 85, 0.15);
 }
 
 .character-image {
     width: 100%;
     height: 280px;
-    /* Taller images */
     object-fit: cover;
     display: block;
-    border-bottom: 3px solid #D8C4B6;
-    /* Sandy Shore line below image */
+    border-bottom: none;
+    transition: transform 0.4s ease;
+}
+
+.character-card:hover .character-image {
+    transform: scale(1.05);
 }
 
 .character-name {
-    font-size: 1.8em;
+    font-size: 1.5rem;
     color: #213555;
-    margin: 20px 15px 8px;
+    margin: 25px 20px 12px;
     font-weight: 700;
 }
 
 .character-description {
-    font-size: 1em;
+    font-size: 1rem;
     color: #3E5879;
-    padding: 0 20px 25px;
+    padding: 0 25px 30px;
     text-align: left;
-    /* Align description left within card */
+    line-height: 1.6;
 }
 
-/* --- Strengths & Weaknesses (Navigational Buoys) --- */
+/* --- Strengths & Weaknesses (Modern Lists) --- */
 .strength-list,
 .weakness-list {
     list-style: none;
     padding: 0;
-    margin: 25px 0;
+    margin: 30px 0;
+    display: grid;
+    gap: 20px;
 }
 
 .strength-list li,
 .weakness-list li {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    padding: 10px 0;
-    border-bottom: 1px dotted rgba(62, 88, 121, 0.4);
+    font-size: 1.125rem;
+    padding: 20px 25px;
+    border-radius: 12px;
     display: flex;
     align-items: flex-start;
     color: #3E5879;
-}
-
-.strength-list li:last-child,
-.weakness-list li:last-child {
+    background: white;
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    transition: all 0.3s ease;
     border-bottom: none;
 }
 
+.strength-list li:hover,
+.weakness-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(33, 53, 85, 0.12);
+}
+
 .strength-list .icon {
-    color: #4CAF50;
-    /* Standard Green for success, like calm waters */
-    font-size: 1.6em;
-    margin-right: 12px;
+    color: #22c55e;
+    font-size: 1.5rem;
+    margin-right: 15px;
     font-weight: bold;
     line-height: 1;
-    /* Align icon better */
+    flex-shrink: 0;
 }
 
 .weakness-list .icon {
-    color: #F44336;
-    /* Standard Red for caution, like stormy waters */
-    font-size: 1.6em;
-    margin-right: 12px;
+    color: #ef4444;
+    font-size: 1.5rem;
+    margin-right: 15px;
     font-weight: bold;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 .strength-list li strong,
@@ -303,85 +318,186 @@ body {
     color: #213555;
 }
 
-/* --- Career List (Harbor Professions) --- */
+.strengths-weaknesses-section .content-with-image {
+    display: block;
+    grid-template-columns: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.strengths-weaknesses-section .text-content {
+    width: 100%;
+    max-width: none;
+}
+
+/* --- Career List (Modern Grid Cards) --- */
 .career-list {
     list-style: none;
     padding: 0;
-    margin-top: 25px;
+    margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
 .career-list li {
-    background-color: #F5EFE7;
-    /* Seafoam/Sky background */
-    padding: 15px 25px;
-    border-left: 6px solid #3E5879;
-    /* Calm Sea Blue accent, like a sturdy pier */
-    border-radius: 8px;
-    font-size: 1.1em;
+    background: white;
+    padding: 25px 30px;
+    border-left: none;
+    border-radius: 12px;
+    font-size: 1.125rem;
     color: #213555;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.career-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #3E5879, #4a6fa5);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.career-list li:hover::before {
+    transform: scaleY(1);
 }
 
 .career-list li:hover {
-    background-color: #D8C4B6;
-    /* Sandy Shore on hover */
-    transform: translateX(5px);
-    /* Gentle push effect */
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(33, 53, 85, 0.15);
+    background: #fafbfc;
 }
 
+.career-paths-section .content-with-image {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-/* --- Video Section (Ocean Depths) --- */
+/* Make the introductory paragraphs span full width */
+.career-paths-section .text-content p {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+/* Create a two-column layout for career list and image */
+.career-paths-section .career-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.career-paths-section .text-content .career-list {
+    grid-column: 1;
+    margin-top: 0;
+}
+
+.career-paths-section .section-image {
+    grid-column: 2;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(33, 53, 85, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Put career list and image in the same container */
+.career-paths-section .content-with-image::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.career-paths-section .text-content {
+    width: 100%;
+}
+
+.career-paths-section .text-content .career-list {
+    float: left;
+    width: calc(50% - 30px);
+    margin-right: 60px;
+    margin-top: 0;
+}
+
+.career-paths-section .section-image {
+    float: right;
+    margin-top: 12%;
+    width: calc(50% - 30px);
+}
+
+/* --- Video Section (Centered Modern) --- */
+.video-section {
+    background: linear-gradient(135deg, #213555 0%, #3E5879 100%);
+    color: white;
+}
+
+.video-section .section-title {
+    color: white;
+}
+
+.video-section .section-title::after {
+    background: linear-gradient(135deg, #D8C4B6, #f0e6d2);
+}
+
+.video-section .section-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .video-wrapper {
     position: relative;
-    padding-bottom: 315px;
-    width: 560px;
-    height: 0;
-    border-radius: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    /* Deeper shadow for depth */
-    border: 3px solid #3E5879;
-    /* Calm Sea Blue border */
-    align-self: center;
-    justify-self: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: none;
+    background: black;
 }
 
-.personality-video {
-    position: absolute;
-    top: 0;
-    left: 0;
+.video-wrapper iframe {
+    width: 100%;
+    height: 450px;
     border: none;
 }
 
-.video-note {
-    text-align: center;
-    font-size: 0.95em;
-    color: #3E5879;
-    margin-top: 20px;
-    font-style: italic;
-    background-color: rgba(216, 196, 182, 0.3);
-    /* Transparent sandy shore background */
-    border-radius: 8px;
-}
-
-/* --- Famous ISTJs List (Lighthouses of Leadership) --- */
+/* --- Famous List (Modern Timeline Style) --- */
 .famous-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .famous-list li {
-    font-size: 1.15em;
-    /* Slightly larger text */
-    margin-bottom: 12px;
-    padding-left: 30px;
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+    padding: 25px 30px 25px 60px;
     position: relative;
     color: #3E5879;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    transition: all 0.3s ease;
+}
+
+.famous-list li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(33, 53, 85, 0.12);
 }
 
 .famous-list li strong {
@@ -390,285 +506,227 @@ body {
 
 .famous-list li::before {
     content: '★';
-    /* Star icon as a beacon */
     color: #D8C4B6;
-    /* Sandy Shore color */
-    font-size: 1.4em;
+    font-size: 1.5rem;
     position: absolute;
-    left: 0;
-    top: -2px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     line-height: 1;
-    /* Align with text */
-    text-shadow: 0 0 5px rgba(216, 196, 182, 0.5);
-    /* Glowing effect */
+    text-shadow: none;
 }
 
-
-/* --- OCEAN Mapping Section (Oceanic Currents) --- */
+/* --- OCEAN Mapping Section (Modern Dashboard) --- */
 .ocean-mapping-section {
-    /* Seafoam/Sky background */
-    padding: 50px 30px;
-    margin: 40px -30px -30px -30px;
-    border-radius: 0 0 15px 15px;
-    border-top: 5px solid #3E5879;
-    /* Stronger top border */
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 80px 40px;
+    margin: 0;
+    border-radius: 0;
+    border-top: none;
 }
 
 .ocean-traits {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 30px;
-    margin-top: 40px;
-    padding: 0 20px;
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ocean-bar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: rgba(246, 232, 223, 0.2);
-    /* Light transparent background for each bar container */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
-    /* Inner shadow for depth */
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    align-items: center;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    gap: 25px;
+    transition: all 0.3s ease;
+}
+
+.ocean-bar-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(33, 53, 85, 0.12);
 }
 
 .ocean-label {
-    font-size: 1.3em;
+    font-size: 1.125rem;
     color: #213555;
-    margin-bottom: 10px;
-    font-weight: 700;
+    margin: 0;
+    font-weight: 600;
 }
 
 .bar-bg {
-    width: 100%;
-    background-color: #f2e2d7;
-    /* Sandy Shore color for the empty part of the bar */
-    height: 22px;
-    /* Thicker bars */
-    border-radius: 11px;
-    /* More rounded ends */
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    height: 12px;
+    border-radius: 6px;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    /* Subtle inner shadow */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .bar-fill {
     height: 100%;
-    border-radius: 11px 0 0 11px;
-    transition: width 1.2s ease-out;
-    /* Slower, more fluid transition */
+    border-radius: 6px;
+    transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
+    background-size: 20px 20px;
+    background-image: linear-gradient(45deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent);
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 0; }
 }
 
 .bar-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    /* Small gradient at the end of the fill */
-    height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.3), transparent);
+    display: none;
 }
 
 .bar-fill.low {
-    background: linear-gradient(to right, #F44336, #FF9800);
-    /* Red to Orange, like setting sun on horizon */
+    background-color: #ef4444;
+    background-image: linear-gradient(45deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent);
 }
 
 .bar-fill.medium {
-    background: linear-gradient(to right, #df8107, #FFEB3B);
-    /* Yellow to brighter yellow, like coastal sunlight */
+    background-color: #f59e0b;
+    background-image: linear-gradient(45deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent);
 }
 
 .bar-fill.high {
-    background: linear-gradient(to right, #36ab39, #80c62f);
-    /* Green to lighter green, flourishing marine life */
+    background-color: #22c55e;
+    background-image: linear-gradient(45deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent);
 }
 
 .bar-fill.very-high {
-    background: linear-gradient(to right, rgb(8, 135, 8), rgb(35, 212, 35));
+    background-color: #16a34a;
+    background-image: linear-gradient(45deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent);
 }
 
 .ocean-score-label {
-    font-size: 1em;
+    font-size: 1rem;
     color: #3E5879;
-    margin-top: 8px;
-    font-weight: 500;
+    font-weight: 600;
+    min-width: 80px;
+    text-align: right;
 }
 
 .ocean-note {
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.125rem;
     color: #3E5879;
-    margin-top: 40px;
-    max-width: 950px;
+    margin-top: 50px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(62, 88, 121, 0.08);
-    /* Very light, transparent blue-gray */
-    padding: 25px;
-    border-radius: 10px;
-    border-left: 8px solid #3E5879;
-    /* Stronger Calm Sea Blue border */
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    border-left: none;
     line-height: 1.7;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(33, 53, 85, 0.1);
+    border: 1px solid rgba(216, 196, 182, 0.2);
 }
 
 .ocean-note strong {
     color: #213555;
 }
 
-
-/* --- Footer (Anchor Point) --- */
-.personality-footer {
-    text-align: center;
-    padding-top: 30px;
-    margin-top: 40px;
-    border-top: 3px solid #D8C4B6;
-    /* Sandy Shore line */
-    font-size: 1.15em;
-    color: #3E5879;
-    position: relative;
-}
-
-.personality-footer::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    /* Position slightly above the border */
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(to left, #3E5879 0%, transparent 20%, transparent 80%, #3E5879 100%);
-    background-size: 200% 100%;
-    /* For animating */
-    animation: gentleWaveReverse 15s infinite linear;
-    /* Wave motion in reverse */
-    opacity: 0.1;
-}
-
-@keyframes gentleWaveReverse {
-    0% {
-        background-position: -100% 0%;
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .content-with-image {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .content-with-image.reverse-on-mobile .section-image {
+        order: -1;
+    }
+    
+    .ocean-bar-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .ocean-label {
+        font-size: 1rem;
     }
 
-    100% {
-        background-position: 100% 0%;
+    .career-paths-section .text-content .career-list {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .career-paths-section .section-image {
+        float: none;
+        width: 100%;
     }
 }
 
-
-.footer-link {
-    color: #213555;
-    /* Deep Ocean Blue */
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.footer-link:hover {
-    color: #3E5879;
-    /* Calm Sea Blue on hover */
-    text-decoration: underline;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
-}
-
-/* --- Responsive Adjustments (Adapting to the Tides) --- */
 @media (max-width: 768px) {
-    .personality-container {
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 10px;
+    .personality-header {
+        padding: 60px 20px 40px;
     }
-
-    .personality-title {
-        font-size: 2.8em;
+    
+    .personality-section {
+        padding: 60px 20px;
     }
-
-    .personality-subtitle {
-        font-size: 1.1em;
-    }
-
-    .section-title {
-        font-size: 2.2em;
-    }
-
-    .section-description {
-        font-size: 1em;
-    }
-
+    
     .character-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 30px;
     }
-
-    .character-image {
-        height: 200px;
-        /* Adjust height for smaller screens */
+    
+    .character-showcase,
+    .ocean-mapping-section {
+        padding: 60px 20px;
     }
-
-    .content-with-image .section-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .strength-list li,
-    .weakness-list li,
-    .famous-list li,
-    .career-list li {
-        font-size: 1em;
-    }
-
+    
     .career-list {
         grid-template-columns: 1fr;
     }
-
-    .ocean-bar-container {
-        padding: 10px;
+    
+    .video-wrapper iframe {
+        height: 250px;
     }
-
-    .ocean-label {
-        font-size: 1.1em;
-    }
-
-    .bar-bg {
-        height: 18px;
-        /* Slightly thinner bars */
+    
+    .famous-list li {
+        padding: 20px 20px 20px 50px;
     }
 }
 
 @media (max-width: 480px) {
-    .personality-title {
-        font-size: 2.2em;
+    .personality-header {
+        padding: 40px 15px 30px;
     }
-
-    .section-title {
-        font-size: 1.9em;
+    
+    .personality-section {
+        padding: 40px 15px;
     }
-
+    
     .character-showcase,
     .ocean-mapping-section {
-        padding: 30px 15px;
-        margin-left: -20px;
-        margin-right: -20px;
+        padding: 40px 15px;
     }
-
-    .personality-container {
-        padding: 15px;
+    
+    .section-title {
+        font-size: 2rem;
     }
-
-    .subsection-title {
-        font-size: 1.6em;
-        padding-left: 15px;
-        border-left-width: 4px;
+    
+    .ocean-note {
+        padding: 25px 20px;
     }
-
-    .subsection-title::before {
-        display: none;
-        /* Hide icon on very small screens */
+    
+    .character-card,
+    .career-list li,
+    .famous-list li {
+        margin: 0 -5px;
     }
 }
