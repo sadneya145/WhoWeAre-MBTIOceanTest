@@ -7,7 +7,7 @@ from main import run_personality_quiz, cluster_profiles  # your logic here
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": [
     "http://localhost:3000", 
-    "https://your-frontend.onrender.com"
+    "https://whoweare-mbtioceantest-frontend.onrender.com"
 ]}})
 
   # Enable CORS for React frontend communication
