@@ -17,6 +17,7 @@ results_collection = db["quiz_results"]
 def quiz():
     try:
         data = request.get_json(force=True)
+        username = data.get('username')
         answers = data.get('answers')
         
         if not answers or not isinstance(answers, dict):
@@ -27,6 +28,7 @@ def quiz():
 
         # Prepare document for MongoDB
         record = {
+            'email': username,
             'answers': answers,
             'scores': {k: float(v) for k, v in scores.items()},
             'cluster': {

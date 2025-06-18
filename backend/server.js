@@ -8,11 +8,27 @@ const crypto = require("crypto");
 
 dotenv.config();
 const app = express();
+// app.use(cors({
+//   origin: 'https://whoweare-mbtioceantest-frontend.onrender.com',
+//   credentials: true
+// }));
+// app.use(express.json());
+
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://whoweare-mbtioceantest-frontend.onrender.com"
+];
+
 app.use(cors({
-  origin: 'https://whoweare-mbtioceantest-frontend.onrender.com',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
-app.use(express.json());
 
 // MongoDB connection
 mongoose
@@ -220,15 +236,15 @@ app.get("/quiz/detail/:id", async (req, res) => {
 // profile page backend
 
 // Get user profile by email
-app.get("/user/:email", async (req, res) => {
-  try {
-    const user = await User.findOne({ email: req.params.email });
-    if (!user) return res.status(404).json({ message: "User not found" });
-    res.json(user);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+// app.get("/user/:email", async (req, res) => {
+//   try {
+//     const user = await User.findOne({ email: req.params.email });
+//     if (!user) return res.status(404).json({ message: "User not found" });
+//     res.json(user);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 // Get quizzes for a user by email
 app.get("/quizzes/:email", async (req, res) => {

@@ -30,12 +30,17 @@ const Header = ({ user }) => {
       </nav>
 
       <div className="auth-section">
-        {user ? (
-          <Link to="/home/profile" className="profile-link">
+       {user ? (
+          <Link
+            to={`/home/profile/${encodeURIComponent(user.email)}`}
+            className="profile-link"
+          >
             <img
-              src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.displayName || user.email}`}
+              src={`https://api.dicebear.com/7.x/initials/svg?seed=${
+                user.displayName || user.email
+              }`}
               alt="User Avatar"
-              className="user-avatar"
+              className="user-avatar-home"
             />
             <span className="user-name">{user.displayName || user.email}</span>
           </Link>
@@ -51,3 +56,6 @@ const Header = ({ user }) => {
 };
 
 export default Header;
+
+
+    
