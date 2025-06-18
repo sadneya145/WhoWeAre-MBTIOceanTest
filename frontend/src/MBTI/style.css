@@ -1,0 +1,742 @@
+/* --- Base Styles & Body --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f9f9f9 0%, #f0f4f8 100%);
+    color: #213555;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Smooth Scrolling --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Personality Container (The Ship's Deck / Main Vessel) --- */
+.personality-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #FFFFFF;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- Header (Hero Section) --- */
+.personality-header {
+    text-align: center;
+    padding: 80px 40px 60px;
+    margin-bottom: 0;
+    background: linear-gradient(135deg, #213555 0%, #3E5879 50%, #4a6fa5 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.personality-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    animation: floatPattern 20s linear infinite;
+}
+
+@keyframes floatPattern {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    100% {
+        transform: translateX(-60px) translateY(-60px);
+    }
+}
+
+.personality-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.personality-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    font-style: normal;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+}
+
+/* --- Section Styling (Modern Cards) --- */
+.personality-section {
+    padding: 80px 40px;
+    border-bottom: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    position: relative;
+}
+
+.personality-section:nth-child(even) {
+    background-color: #fafbfc;
+}
+
+.personality-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #213555;
+    text-align: center;
+    position: relative;
+    padding-bottom: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #3E5879, #4a6fa5);
+    border-radius: 2px;
+}
+
+.section-description {
+    font-size: 1.25rem;
+    color: #3E5879;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.subsection-title {
+    font-size: 2rem;
+    color: #213555;
+    margin: 50px 0 25px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 0;
+    border-left: none;
+}
+
+.subsection-title::before {
+    display: none;
+}
+
+/* --- Content with Image Layout (Modern Grid) --- */
+.content-with-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-with-image .text-content {
+    font-size: 1.125rem;
+    color: #3E5879;
+    line-height: 1.7;
+}
+
+.content-with-image .text-content p {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.content-with-image .section-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(33, 53, 85, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.content-with-image .section-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(33, 53, 85, 0.25);
+}
+
+/* --- Character Showcase (Hero Grid) --- */
+.character-showcase {
+    padding: 80px 40px;
+    margin: 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 0;
+    border-bottom: none;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.character-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(33, 53, 85, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    position: relative;
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #3E5879, #4a6fa5);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.character-card:hover::before {
+    transform: scaleX(1);
+}
+
+.character-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(33, 53, 85, 0.15);
+}
+
+.character-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-bottom: none;
+    transition: transform 0.4s ease;
+}
+
+.character-card:hover .character-image {
+    transform: scale(1.05);
+}
+
+.character-name {
+    font-size: 1.5rem;
+    color: #213555;
+    margin: 25px 20px 12px;
+    font-weight: 700;
+}
+
+.character-description {
+    font-size: 1rem;
+    color: #3E5879;
+    padding: 0 25px 30px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* --- Strengths & Weaknesses (Modern Lists) --- */
+.strength-list,
+.weakness-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    display: grid;
+    gap: 20px;
+}
+
+.strength-list li,
+.weakness-list li {
+    font-size: 1.125rem;
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    color: #3E5879;
+    background: white;
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    transition: all 0.3s ease;
+    border-bottom: none;
+}
+
+.strength-list li:hover,
+.weakness-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(33, 53, 85, 0.12);
+}
+
+.strength-list .icon {
+    color: #22c55e;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    font-weight: bold;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.weakness-list .icon {
+    color: #ef4444;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    font-weight: bold;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.strength-list li strong,
+.weakness-list li strong {
+    color: #213555;
+}
+
+.strengths-weaknesses-section .content-with-image {
+    display: block;
+    grid-template-columns: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.strengths-weaknesses-section .text-content {
+    width: 100%;
+    max-width: none;
+}
+
+/* --- Career List (Modern Grid Cards) --- */
+.career-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.career-list li {
+    background: white;
+    padding: 25px 30px;
+    border-left: none;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    color: #213555;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.career-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #3E5879, #4a6fa5);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.career-list li:hover::before {
+    transform: scaleY(1);
+}
+
+.career-list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(33, 53, 85, 0.15);
+    background: #fafbfc;
+}
+
+.career-paths-section .content-with-image {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Make the introductory paragraphs span full width */
+.career-paths-section .text-content p {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+/* Create a two-column layout for career list and image */
+.career-paths-section .career-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.career-paths-section .text-content .career-list {
+    grid-column: 1;
+    margin-top: 0;
+}
+
+.career-paths-section .section-image {
+    grid-column: 2;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(33, 53, 85, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Put career list and image in the same container */
+.career-paths-section .content-with-image::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.career-paths-section .text-content {
+    width: 100%;
+}
+
+.career-paths-section .text-content .career-list {
+    float: left;
+    width: calc(50% - 30px);
+    margin-right: 60px;
+    margin-top: 0;
+}
+
+.career-paths-section .section-image {
+    float: right;
+    margin-top: 12%;
+    width: calc(50% - 30px);
+}
+
+/* --- Video Section (Centered Modern) --- */
+.video-section {
+    background: linear-gradient(135deg, #213555 0%, #3E5879 100%);
+    color: white;
+}
+
+.video-section .section-title {
+    color: white;
+}
+
+.video-section .section-title::after {
+    background: linear-gradient(135deg, #D8C4B6, #f0e6d2);
+}
+
+.video-section .section-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.video-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: none;
+    background: black;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* --- Famous List (Modern Timeline Style) --- */
+.famous-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.famous-list li {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+    padding: 25px 30px 25px 60px;
+    position: relative;
+    color: #3E5879;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    transition: all 0.3s ease;
+}
+
+.famous-list li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(33, 53, 85, 0.12);
+}
+
+.famous-list li strong {
+    color: #213555;
+}
+
+.famous-list li::before {
+    content: '★';
+    color: #D8C4B6;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    text-shadow: none;
+}
+
+/* --- OCEAN Mapping Section (Modern Dashboard) --- */
+.ocean-mapping-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 80px 40px;
+    margin: 0;
+    border-radius: 0;
+    border-top: none;
+}
+
+.ocean-traits {
+    display: grid;
+    gap: 30px;
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ocean-bar-container {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    align-items: center;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(33, 53, 85, 0.08);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+    gap: 25px;
+    transition: all 0.3s ease;
+}
+
+.ocean-bar-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(33, 53, 85, 0.12);
+}
+
+.ocean-label {
+    font-size: 1.125rem;
+    color: #213555;
+    margin: 0;
+    font-weight: 600;
+}
+
+.bar-bg {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    background-size: 20px 20px;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 20px 0;
+    }
+}
+
+.bar-fill::after {
+    display: none;
+}
+
+.bar-fill.low {
+    background-color: #ef4444;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.bar-fill.medium {
+    background-color: #f59e0b;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.bar-fill.high {
+    background-color: #22c55e;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.bar-fill.very-high {
+    background-color: #16a34a;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.ocean-score-label {
+    font-size: 1rem;
+    color: #3E5879;
+    font-weight: 600;
+    min-width: 80px;
+    text-align: right;
+}
+
+.ocean-note {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #3E5879;
+    margin-top: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    border-left: none;
+    line-height: 1.7;
+    box-shadow: 0 10px 30px rgba(33, 53, 85, 0.1);
+    border: 1px solid rgba(216, 196, 182, 0.2);
+}
+
+.ocean-note strong {
+    color: #213555;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .content-with-image {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .content-with-image.reverse-on-mobile .section-image {
+        order: -1;
+    }
+
+    .ocean-bar-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .ocean-label {
+        font-size: 1rem;
+    }
+
+    .career-paths-section .text-content .career-list {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .career-paths-section .section-image {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .personality-header {
+        padding: 60px 20px 40px;
+    }
+
+    .personality-section {
+        padding: 60px 20px;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .character-showcase,
+    .ocean-mapping-section {
+        padding: 60px 20px;
+    }
+
+    .career-list {
+        grid-template-columns: 1fr;
+    }
+
+    .video-wrapper iframe {
+        height: 250px;
+    }
+
+    .famous-list li {
+        padding: 20px 20px 20px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .personality-header {
+        padding: 40px 15px 30px;
+    }
+
+    .personality-section {
+        padding: 40px 15px;
+    }
+
+    .character-showcase,
+    .ocean-mapping-section {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .ocean-note {
+        padding: 25px 20px;
+    }
+
+    .character-card,
+    .career-list li,
+    .famous-list li {
+        margin: 0 -5px;
+    }
+}

@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+
+.auth-container {
+  background: linear-gradient(45deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #1e3a8a 75%, #0f172a 100%);
+  background-size: 400% 400%;
+  animation: cosmicFlow 12s ease-in-out infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated overlay gradients */
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(29, 78, 216, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(147, 197, 253, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 40%, rgba(30, 58, 138, 0.12) 0%, transparent 50%);
+  animation: gradientShift 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Floating particles */
+.auth-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(59, 130, 246, 0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(147, 197, 253, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(96, 165, 250, 0.7), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(59, 130, 246, 0.5), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(29, 78, 216, 0.6), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+}
+
+/* Add floating geometric shapes */
+.auth-container .floating-shape {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.auth-container .floating-shape:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #3b82f6, #1e40af);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: rotateFloat 20s infinite linear;
+}
+
+.auth-container .floating-shape:nth-child(2) {
+  top: 70%;
+  right: 15%;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(45deg, #60a5fa, #3b82f6);
+  border-radius: 50%;
+  animation: orbFloat 15s infinite ease-in-out;
+}
+
+.auth-container .floating-shape:nth-child(3) {
+  top: 30%;
+  right: 20%;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #93c5fd, #60a5fa);
+  transform: rotate(45deg);
+  animation: diamondFloat 18s infinite ease-in-out;
+}
+
+.auth-container .floating-shape:nth-child(4) {
+  bottom: 20%;
+  left: 20%;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 26px solid rgba(96, 165, 250, 0.3);
+  animation: triangleFloat 22s infinite ease-in-out;
+}
+
+/* Glowing orbs */
+.auth-container .glowing-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.1) 40%, transparent 70%);
+  pointer-events: none;
+  animation: orbGlow 6s ease-in-out infinite alternate;
+}
+
+.auth-container .glowing-orb:nth-child(5) {
+  top: 15%;
+  right: 30%;
+  width: 80px;
+  height: 80px;
+  animation-delay: -2s;
+}
+
+.auth-container .glowing-orb:nth-child(6) {
+  bottom: 25%;
+  right: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: -4s;
+}
+
+/* Animation keyframes */
+@keyframes cosmicFlow {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 100% 25%;
+  }
+
+  50% {
+    background-position: 100% 75%;
+  }
+
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    transform: translateX(0%) translateY(0%) rotate(0deg);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateX(5%) translateY(-5%) rotate(90deg);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translateX(-5%) translateY(5%) rotate(180deg);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateX(-5%) translateY(-5%) rotate(270deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+
+  66% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes rotateFloat {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+  }
+
+  50% {
+    transform: rotate(180deg) translateY(-20px);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(0px);
+  }
+}
+
+@keyframes orbFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0.2;
+  }
+}
+
+@keyframes diamondFloat {
+
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0px);
+  }
+
+  33% {
+    transform: rotate(135deg) translateY(-15px);
+  }
+
+  66% {
+    transform: rotate(225deg) translateY(-10px);
+  }
+}
+
+@keyframes triangleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(180deg);
+    opacity: 0.2;
+  }
+}
+
+@keyframes orbGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1.3);
+    opacity: 0.1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+  .auth-container .floating-shape,
+  .auth-container .glowing-orb {
+    display: none;
+  }
+}
+
+.auth-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow:
+    0 8px 32px rgba(14, 165, 233, 0.15),
+    0 4px 16px rgba(2, 132, 199, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0ea5e9, #0284c7, #0369a1, #0284c7, #0ea5e9);
+  background-size: 200% 100%;
+  animation: waveFlow 3s linear infinite;
+}
+
+@keyframes waveFlow {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.auth-form h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(135deg, #0284c7, #0369a1, #075985);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.auth-form input {
+  font-family: 'Inter', sans-serif;
+  padding: 14px 18px;
+  border: 2px solid rgba(56, 189, 248, 0.2);
+  border-radius: 12px;
+  font-size: 16px;
+  width: 90%;
+  outline: none;
+  background: rgba(240, 249, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #0f172a;
+}
+
+.auth-form input::placeholder {
+  color: rgba(2, 132, 199, 0.6);
+}
+
+.auth-form input:focus {
+  border-color: #0284c7;
+  background: rgba(240, 249, 255, 0.8);
+  box-shadow:
+    0 0 0 3px rgba(56, 189, 248, 0.1),
+    0 4px 12px rgba(14, 165, 233, 0.15);
+  transform: translateY(-1px);
+}
+
+.loginbutton,
+.otpbutton,
+.verifyotpbutton {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  width: 350px;
+  justify-content: center;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 12px rgba(14, 165, 233, 0.3),
+    0 2px 4px rgba(2, 132, 199, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.loginbutton::before,
+.otpbutton::before,
+.verifyotpbutton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.loginbutton:hover::before,
+.otpbutton:hover::before,
+.verifyotpbutton:hover::before {
+  left: 100%;
+}
+
+.loginbutton:hover,
+.otpbutton:hover,
+.verifyotpbutton:hover {
+  background: linear-gradient(135deg, #0369a1, #075985);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px rgba(14, 165, 233, 0.4),
+    0 4px 8px rgba(2, 132, 199, 0.3);
+}
+
+.loginbutton:active,
+.otpbutton:active,
+.verifyotpbutton:active {
+  transform: translateY(0);
+}
+
+.social-icons {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.social-icons p {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.icon-row button {
+  width: 40px;
+  height: 40px;
+  background-color: #e5e7eb !important;
+  /* light gray */
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.icon-row button:hover {
+  background-color: #d1d5db !important;
+  /* slightly darker on hover */
+}
+
+.icon-row img {
+  width: 20px;
+  height: 20px;
+}
+
+
+.signup-link {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.signup-link span {
+  color: #0284c7;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.signup-link span:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
+
+/* Ocean bubble animation */
+.auth-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(56, 189, 248, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(14, 165, 233, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(2, 132, 199, 0.3), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(56, 189, 248, 0.2), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(14, 165, 233, 0.3), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: bubbleFloat 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
