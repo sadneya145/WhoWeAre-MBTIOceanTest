@@ -3,10 +3,10 @@ import './style.css';
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const ISTP = () => {
+const ISTP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container istp-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -202,9 +202,17 @@ const ISTP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-istp-video-id' with an actual YouTube video ID */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/rYbp0in339U?si=CycIkvGAK2qc4Yfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/rYbp0in339U?si=CycIkvGAK2qc4Yfo"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
         {/* Famous ISTPs Section */}
         <section className="personality-section famous-istjs-section">
@@ -257,41 +265,35 @@ const ISTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '55%' }}></div>
+                <div className="bar-fill medium" style={{width: '55%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div
-                  className="bar-fill medium"
-                  style={{ width: '40%' }}
-                ></div>
+                <div className="bar-fill medium" style={{width: '40%'}}></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div
-                  className="bar-fill medium"
-                  style={{ width: '40%' }}
-                ></div>
+                <div className="bar-fill medium" style={{width: '40%'}}></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '25%' }}></div>
+                <div className="bar-fill low" style={{width: '25%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
@@ -309,7 +311,7 @@ const ISTP = () => {
           </p>
         </section>
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

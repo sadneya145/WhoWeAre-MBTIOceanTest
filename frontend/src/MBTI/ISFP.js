@@ -3,10 +3,10 @@ import './style.css';
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const ISFP = () => {
+const ISFP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container isfp-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -192,7 +192,16 @@ const ISFP = () => {
             them.
           </p>
           <div className="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/BSIPI8jOwvg?si=caSk6ixZB4G_ZNzt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/BSIPI8jOwvg?si=caSk6ixZB4G_ZNzt"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </section>
 
@@ -247,35 +256,35 @@ const ISFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '75%' }}></div>
+                <div className="bar-fill high" style={{width: '75%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '30%' }}></div>
+                <div className="bar-fill low" style={{width: '30%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '80%' }}></div>
+                <div className="bar-fill high" style={{width: '80%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '55%' }}></div>
+                <div className="bar-fill medium" style={{width: '55%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -292,7 +301,7 @@ const ISFP = () => {
           </p>
         </section>
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

@@ -3,10 +3,10 @@ import './style.css'; // Assuming style.css contains the custom styles
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const ENTJ = () => {
+const ENTJ = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container entj-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -206,9 +206,17 @@ const ENTJ = () => {
             Discover more about what makes ENTJs powerful and effective leaders.
           </p>
           <div className="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/4lAglKI3EEo?si=pgF9l2ftTMLbgCsW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/4lAglKI3EEo?si=pgF9l2ftTMLbgCsW"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
 
         {/* Famous ENTJs Section */}
@@ -261,7 +269,7 @@ const ENTJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '80%' }}></div>
+                <div className="bar-fill high" style={{width: '80%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
@@ -270,7 +278,7 @@ const ENTJ = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '90%' }}
+                  style={{width: '90%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -278,39 +286,42 @@ const ENTJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '85%' }}></div>
+                <div className="bar-fill high" style={{width: '85%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '35%' }}></div>
+                <div className="bar-fill low" style={{width: '35%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '45%' }}></div>
+                <div className="bar-fill medium" style={{width: '45%'}}></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
             </div>
           </div>
           <p className="ocean-note">
-            ENTJs typically exhibit <strong>very high Conscientiousness</strong>, indicating
-            strong planning, leadership, and goal-setting abilities. Their
-            <strong>high Openness to Experience</strong> reflects their drive for innovation,
-            strategic thinking, and openness to new ideas. High <strong>Extraversion</strong>
+            ENTJs typically exhibit <strong>very high Conscientiousness</strong>
+            , indicating strong planning, leadership, and goal-setting
+            abilities. Their
+            <strong>high Openness to Experience</strong> reflects their drive
+            for innovation, strategic thinking, and openness to new ideas. High{' '}
+            <strong>Extraversion</strong>
             is evident in their assertive, energetic, and sociable nature.
-            <strong>Lower Agreeableness</strong> reflects their preference for challenge and
-            debate over harmony, often focusing more on results than on
-            feelings. Their <strong>Neuroticism</strong> tends to be moderate to low,
-            indicating emotional control and resilience under pressure.
+            <strong>Lower Agreeableness</strong> reflects their preference for
+            challenge and debate over harmony, often focusing more on results
+            than on feelings. Their <strong>Neuroticism</strong> tends to be
+            moderate to low, indicating emotional control and resilience under
+            pressure.
           </p>
         </section>
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

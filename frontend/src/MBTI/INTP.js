@@ -3,11 +3,10 @@ import './style.css';
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-
-const INTP = () => {
+const INTP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container intp-theme">
         {/* Title and Subtitle */}
         <header className="personality-header">
@@ -90,7 +89,6 @@ const INTP = () => {
         <section className="personality-section strengths-weaknesses-section">
           <h2 className="section-title">Strengths & Challenges</h2>
           <div className="content-with-image">
-
             <div className="text-content">
               <h3 className="subsection-title">Strengths</h3>
               <ul className="strength-list">
@@ -190,9 +188,17 @@ const INTP = () => {
             Get a glimpse into the logic, wonder, and wit of INTP personalities.
           </p>
           <div className="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/GcOeGJ5hFA0?si=ILRHWZWk7d4gkQAy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/GcOeGJ5hFA0?si=ILRHWZWk7d4gkQAy"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
         {/* Famous INTPs Section */}
         <section className="personality-section famous-istjs-section">
@@ -247,7 +253,7 @@ const INTP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '90%' }}
+                  style={{width: '90%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -255,28 +261,28 @@ const INTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '40%' }}></div>
+                <div className="bar-fill low" style={{width: '40%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '25%' }}></div>
+                <div className="bar-fill low" style={{width: '25%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '55%' }}></div>
+                <div className="bar-fill medium" style={{width: '55%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -293,7 +299,7 @@ const INTP = () => {
           </p>
         </section>
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

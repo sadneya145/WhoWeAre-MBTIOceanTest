@@ -3,10 +3,10 @@ import './style.css';
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const ENFP = () => {
+const ENFP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container enfp-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -204,9 +204,17 @@ const ENFP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-enfp-video-id' with an actual YouTube video ID */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/iC6Z2J7JLsA?si=zxnCFp_Eqa8mXuqj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/iC6Z2J7JLsA?si=zxnCFp_Eqa8mXuqj"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
 
         {/* Famous ENFPs Section */}
@@ -263,7 +271,7 @@ const ENFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '90%' }}
+                  style={{width: '90%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -271,7 +279,7 @@ const ENFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -280,7 +288,7 @@ const ENFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '95%' }}
+                  style={{width: '95%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -288,14 +296,14 @@ const ENFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '80%' }}></div>
+                <div className="bar-fill high" style={{width: '80%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -312,7 +320,7 @@ const ENFP = () => {
           </p>
         </section>
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

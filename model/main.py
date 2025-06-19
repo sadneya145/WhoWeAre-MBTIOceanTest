@@ -84,21 +84,24 @@ def normalize_score(raw_score, num_positive, num_negative):
     return max(0, min(10, normalized))
 
 def infer_mbti(ocean_scores):
-    """Derive MBTI type from OCEAN scores."""
+    """Derive MBTI type from OCEAN scores with better thresholds"""
     mbti = ""
-
+    
     # Extraversion vs Introversion
     mbti += "E" if ocean_scores['E'] >= 5 else "I"
-
-    # Sensing vs Intuition – correlate to Openness
-    mbti += "N" if ocean_scores['O'] >= 5 else "S"
-
-    # Thinking vs Feeling – correlate to Agreeableness
-    mbti += "F" if ocean_scores['A'] >= 5 else "T"
-
-    # Judging vs Perceiving – correlate to Conscientiousness
+    
+    # Sensing vs Intuition - using Openness with adjusted threshold
+    # Higher threshold for N since many people score moderately on Openness
+    mbti += "N" if ocean_scores['O'] >= 6 else "S"
+    
+    # Thinking vs Feeling - using Agreeableness with adjusted threshold
+    # ENTJs typically score low on Agreeableness
+    mbti += "F" if ocean_scores['A'] >= 5.5 else "T"
+    
+    # Judging vs Perceiving - using Conscientiousness
+    # ENTJs typically score high on Conscientiousness
     mbti += "J" if ocean_scores['C'] >= 5 else "P"
-
+    
     return mbti
 
 # def run_personality_quiz(test_mode=False):

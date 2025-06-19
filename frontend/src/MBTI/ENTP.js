@@ -3,10 +3,10 @@ import './style.css'; // Assuming style.css contains the custom marine-themed st
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const ENTP = () => {
+const ENTP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container entp-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -207,7 +207,16 @@ const ENTP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-entp-video-id' with an actual YouTube video ID for ENTP */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Gck8fW9dNoI?si=0NSB4D3Z8WkOrHKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Gck8fW9dNoI?si=0NSB4D3Z8WkOrHKU"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
           <p className="video-note">
             *Note: Replace "your-entp-video-id" with a relevant YouTube video ID
@@ -268,7 +277,7 @@ const ENTP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '90%' }}
+                  style={{width: '90%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -276,28 +285,28 @@ const ENTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '25%' }}></div>
+                <div className="bar-fill low" style={{width: '25%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '85%' }}></div>
+                <div className="bar-fill high" style={{width: '85%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '45%' }}></div>
+                <div className="bar-fill medium" style={{width: '45%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -313,10 +322,8 @@ const ENTP = () => {
             fluctuations.
           </p>
         </section>
-
-
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

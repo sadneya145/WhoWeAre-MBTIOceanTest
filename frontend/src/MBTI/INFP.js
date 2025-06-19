@@ -3,10 +3,10 @@ import './style.css';
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const INFP = () => {
+const INFP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container infp-theme">
         {/* Title */}
         <header className="personality-header">
@@ -88,7 +88,6 @@ const INFP = () => {
         <section className="personality-section strengths-weaknesses-section">
           <h2 className="section-title">Strengths & Challenges</h2>
           <div className="content-with-image">
-
             <div className="text-content">
               <h3 className="subsection-title">Strengths</h3>
               <ul className="strength-list">
@@ -189,9 +188,17 @@ const INFP = () => {
             thought.
           </p>
           <div className="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-3uRUEZnuA4?si=peCOUBvJusj0ed9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/-3uRUEZnuA4?si=peCOUBvJusj0ed9r"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
 
         {/* Famous INFPs Section */}
@@ -248,7 +255,7 @@ const INFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '95%' }}
+                  style={{width: '95%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -256,28 +263,28 @@ const INFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '55%' }}></div>
+                <div className="bar-fill medium" style={{width: '55%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '20%' }}></div>
+                <div className="bar-fill low" style={{width: '20%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '85%' }}></div>
+                <div className="bar-fill high" style={{width: '85%'}}></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '60%' }}></div>
+                <div className="bar-fill medium" style={{width: '60%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -295,7 +302,7 @@ const INFP = () => {
           </p>
         </section>
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

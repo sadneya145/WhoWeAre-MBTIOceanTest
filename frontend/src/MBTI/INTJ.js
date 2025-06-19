@@ -2,10 +2,10 @@ import React from 'react';
 import './style.css'; // Assuming style.css contains the custom marine-themed styles
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
-const INTJ = () => {
+const INTJ = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container intj-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -96,7 +96,6 @@ const INTJ = () => {
             Delve into the core traits that empower and challenge INTJs.
           </p>
           <div className="content-with-image">
-
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -209,9 +208,17 @@ const INTJ = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-intj-video-id' with an actual YouTube video ID for INTJ */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/p71m6O1uo3I?si=oGdAiehxK7N5mvWn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/p71m6O1uo3I?si=oGdAiehxK7N5mvWn"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
 
         {/* Famous INTJs Section */}
@@ -267,35 +274,35 @@ const INTJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '85%' }}></div>
+                <div className="bar-fill high" style={{width: '85%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '90%' }}></div>
+                <div className="bar-fill high" style={{width: '90%'}}></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '25%' }}></div>
+                <div className="bar-fill low" style={{width: '25%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '40%' }}></div>
+                <div className="bar-fill medium" style={{width: '40%'}}></div>
               </div>
               <span className="ocean-score-label">Medium-Low</span>
             </div>
@@ -313,9 +320,8 @@ const INTJ = () => {
             suggests emotional stability and resilience.
           </p>
         </section>
-
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

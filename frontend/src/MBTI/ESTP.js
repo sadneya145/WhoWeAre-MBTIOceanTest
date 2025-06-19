@@ -2,10 +2,10 @@ import React from 'react';
 import './style.css'; // Assuming style.css contains the custom marine-themed styles
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
-const ESTP = () => {
+const ESTP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container estp-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -97,7 +97,6 @@ const ESTP = () => {
             Exploring the energetic and adaptable nature of ESTPs.
           </p>
           <div className="content-with-image">
-
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -214,9 +213,17 @@ const ESTP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-estp-video-id' with an actual YouTube video ID for ESTP */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/9Q92mX44S5s?si=xwHv6eyY_l3E-NdW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/9Q92mX44S5s?si=xwHv6eyY_l3E-NdW"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
 
         {/* Famous ESTPs Section */}
@@ -272,14 +279,14 @@ const ESTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '60%' }}></div>
+                <div className="bar-fill medium" style={{width: '60%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '30%' }}></div>
+                <div className="bar-fill low" style={{width: '30%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
@@ -288,7 +295,7 @@ const ESTP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '95%' }}
+                  style={{width: '95%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -296,14 +303,14 @@ const ESTP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '55%' }}></div>
+                <div className="bar-fill medium" style={{width: '55%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill low" style={{ width: '25%' }}></div>
+                <div className="bar-fill low" style={{width: '25%'}}></div>
               </div>
               <span className="ocean-score-label">Low</span>
             </div>
@@ -318,10 +325,8 @@ const ESTP = () => {
             emotional resilience under pressure.
           </p>
         </section>
-
-
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

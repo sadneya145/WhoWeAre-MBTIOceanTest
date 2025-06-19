@@ -3,10 +3,10 @@ import './style.css'; // Use the same style.css
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const ENFJ = () => {
+const ENFJ = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container enfj-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -96,7 +96,6 @@ const ENFJ = () => {
             Key traits that define the ENFJ personality type.
           </p>
           <div className="content-with-image">
-
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -209,9 +208,17 @@ const ENFJ = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace with an actual YouTube video ID about ENFJ */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ki0Sk-R50W8?si=7GuXSqRI7QYJPvzi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/ki0Sk-R50W8?si=7GuXSqRI7QYJPvzi"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
 
         {/* Famous ENFJs Section */}
@@ -260,35 +267,41 @@ const ENFJ = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '85%' }}></div>
+                <div className="bar-fill high" style={{width: '85%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '80%' }}></div>
+                <div className="bar-fill high" style={{width: '80%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Extraversion</label>
               <div className="bar-bg">
-                <div className="bar-fill very-high" style={{ width: '90%' }}></div>
+                <div
+                  className="bar-fill very-high"
+                  style={{width: '90%'}}
+                ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill very-high" style={{ width: '95%' }}  ></div>
+                <div
+                  className="bar-fill very-high"
+                  style={{width: '95%'}}
+                ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -308,7 +321,7 @@ const ENFJ = () => {
 
         {/* Call to Action/Footer */}
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

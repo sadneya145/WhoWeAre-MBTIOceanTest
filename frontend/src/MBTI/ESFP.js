@@ -3,10 +3,10 @@ import './style.css'; // Assuming style.css contains the custom marine-themed st
 import Header from '../Pages/Header/Header';
 import Footer from '../Pages/Footer/Footer';
 
-const ESFP = () => {
+const ESFP = ({standalone = true}) => {
   return (
     <div>
-      <Header />
+      {standalone && <Header />}
       <div className="personality-container esfp-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -94,7 +94,6 @@ const ESFP = () => {
             Exploring the vibrant and spontaneous nature of ESFPs.
           </p>
           <div className="content-with-image">
-
             <div className="text-content">
               <h3 className="subsection-title">Core Strengths</h3>
               <ul className="strength-list">
@@ -207,7 +206,16 @@ const ESFP = () => {
           </p>
           <div className="video-wrapper">
             {/* Replace 'your-esfp-video-id' with an actual YouTube video ID for ESFP */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/vGtpFiGYBTI?si=5Fo4Pgbsy1nRQp2x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/vGtpFiGYBTI?si=5Fo4Pgbsy1nRQp2x"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </section>
 
@@ -262,17 +270,14 @@ const ESFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Openness to Experience</label>
               <div className="bar-bg">
-                <div
-                  className="bar-fill high"
-                  style={{ width: '70%' }}
-                ></div>
+                <div className="bar-fill high" style={{width: '70%'}}></div>
               </div>
               <span className="ocean-score-label">Medium-High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Conscientiousness</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '50%' }}></div>
+                <div className="bar-fill medium" style={{width: '50%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -281,7 +286,7 @@ const ESFP = () => {
               <div className="bar-bg">
                 <div
                   className="bar-fill very-high"
-                  style={{ width: '95%' }}
+                  style={{width: '95%'}}
                 ></div>
               </div>
               <span className="ocean-score-label">Very High</span>
@@ -289,14 +294,14 @@ const ESFP = () => {
             <div className="ocean-bar-container">
               <label className="ocean-label">Agreeableness</label>
               <div className="bar-bg">
-                <div className="bar-fill high" style={{ width: '80%' }}></div>
+                <div className="bar-fill high" style={{width: '80%'}}></div>
               </div>
               <span className="ocean-score-label">High</span>
             </div>
             <div className="ocean-bar-container">
               <label className="ocean-label">Neuroticism</label>
               <div className="bar-bg">
-                <div className="bar-fill medium" style={{ width: '45%' }}></div>
+                <div className="bar-fill medium" style={{width: '45%'}}></div>
               </div>
               <span className="ocean-score-label">Medium</span>
             </div>
@@ -313,10 +318,8 @@ const ESFP = () => {
             sensitivity.
           </p>
         </section>
-
-
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };

@@ -3,10 +3,10 @@ import "./style.css"; // Assuming style.css contains the custom styles
 import Header from "../Pages/Header/Header";
 import Footer from '../Pages/Footer/Footer';
 
-const ISTJ = () => {
+const ISTJ = ({standalone = true}) => {
   return (
     <div>
-      <Header></Header>
+      {standalone && <Header />}
       <div className="personality-container istj-theme">
         {/* Page Title and Slogan */}
         <header className="personality-header">
@@ -304,7 +304,7 @@ const ISTJ = () => {
           </p>
         </section>
       </div>
-      <Footer />
+      {standalone && <Footer />}
     </div>
   );
 };
