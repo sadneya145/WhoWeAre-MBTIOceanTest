@@ -16,7 +16,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://whoweare-mbtioceantest-frontend.onrender.com"
+  "https://whoweare-mbtioceantest-frontend.onrender.com",
+  "https://whoweare.in"
 ];
 
 app.use(cors({
