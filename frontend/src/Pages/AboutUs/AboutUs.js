@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import { getAuth } from 'firebase/auth';
 import Footer from '../Footer/Footer';
 
-
+// about us 
 const AboutUs = () => {
   const auth = getAuth();
   const user = auth.currentUser;
