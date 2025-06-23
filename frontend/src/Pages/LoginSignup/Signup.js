@@ -458,7 +458,7 @@ const Signup = () => {
               {loading ? 'Processing...' : 'Send OTP'}
             </button>
 
-            <button
+            {/* <button
               className="skip-otp-button"
               type="button"
               onClick={() => {
@@ -473,13 +473,13 @@ const Signup = () => {
               }}
             >
               Skip Email Verification & Sign Up
-            </button>
+            </button> */}
 
-            <p style={{ fontSize: '12px', color: '#666', marginTop: '10px' }}>
+            {/* <p style={{ fontSize: '12px', color: '#666', marginTop: '10px' }}>
               We'll send a verification code to your email address.
               <br />
               <em>Note: If email verification is unavailable, you can skip it and verify later.</em>
-            </p>
+            </p> */}
           </>
         )}
 
@@ -504,7 +504,7 @@ const Signup = () => {
               {loading ? 'Verifying...' : 'Verify OTP & Signup'}
             </button>
 
-            <div style={{ marginTop: '15px' }}>
+            {/* <div style={{ marginTop: '15px' }}>
               <button
                 type="button"
                 onClick={resendOtp}
@@ -534,7 +534,7 @@ const Signup = () => {
               >
                 Skip Verification
               </button>
-            </div>
+            </div> */}
           </>
         )}
 

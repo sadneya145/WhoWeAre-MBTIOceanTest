@@ -84,10 +84,10 @@ const Login = () => {
       
       if (isNewUser) {
         alert(`Welcome! Account created successfully with ${providerName}.`);
-        navigate("/home"); // New users also go to home
+        navigate("/"); // New users also go to home
       } else {
         alert(`Welcome back! Login successful with ${providerName}.`);
-        navigate("/home");
+        navigate("/");
       }
     } catch (error) {
       console.error(`${providerName} login error:`, error.code, error.message);
