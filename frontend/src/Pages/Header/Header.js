@@ -14,7 +14,7 @@ const Header = ({ user }) => {
       </div>
 
       <nav className="nav-links">
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/home/quiz">Take Quiz</Link>
 
         <div className="nav-item dropdown-parent">

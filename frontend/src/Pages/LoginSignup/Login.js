@@ -40,7 +40,7 @@ const Login = () => {
         setTimeout(() => navigate("/signup"), 500); // delay navigation
       } else {
         alert("Login successful with Google!");
-        setTimeout(() => navigate("/home"), 500);
+        setTimeout(() => navigate("/"), 500);
       }
     } catch (error) {
       alert("Google login failed: " + error.message);

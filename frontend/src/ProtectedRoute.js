@@ -1,14 +1,15 @@
-// src/components/ProtectedRoute.js
+// ProtectedRoute.js
+import React from 'react';
 import { Navigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from './firebaseConfig'; // Adjust the path accordingly
 
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = localStorage.getItem('token'); // Adjust key if different
+  const [user, loading] = useAuthState(auth);
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
+  if (loading) return <div>Loading...</div>; // Optional loading UI
 
-  return children;
+  return user ? children : <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;

@@ -1,6 +1,6 @@
 // Signup.js
-import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {
   registerWithEmail,
   signInWithGoogle,
@@ -18,11 +18,14 @@ const Signup = () => {
 
   const sendOtpToEmail = async () => {
     try {
-      const response = await fetch('https://whoweare-mbtioceantest-backend.onrender.com/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
+      const response = await fetch(
+        'https://whoweare-mbtioceantest-backend.onrender.com/send-otp',
+        {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({email}),
+        }
+      );
       const data = await response.json();
       if (data.success) {
         alert('OTP sent to your email.');
@@ -37,11 +40,14 @@ const Signup = () => {
 
   const verifyOtp = async () => {
     try {
-      const response = await fetch('https://whoweare-mbtioceantest-backend.onrender.com/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, otp }),
-      });
+      const response = await fetch(
+        'https://whoweare-mbtioceantest-backend.onrender.com/verify-otp',
+        {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({email, otp}),
+        }
+      );
       const data = await response.json();
       if (data.success) {
         alert('Email verified!');
@@ -58,7 +64,7 @@ const Signup = () => {
     try {
       await registerWithEmail(email, password);
       alert('Signup successful!');
-      setStep('success');
+      navigate('/login'); // Redirect to login page
     } catch (error) {
       alert(error.message);
     }
@@ -94,7 +100,11 @@ const Signup = () => {
               onChange={e => setPassword(e.target.value)}
             />
 
-            <button className="otpbutton" type="button" onClick={sendOtpToEmail}>
+            <button
+              className="otpbutton"
+              type="button"
+              onClick={sendOtpToEmail}
+            >
               Send OTP
             </button>
           </>
@@ -109,7 +119,11 @@ const Signup = () => {
               onChange={e => setOtp(e.target.value)}
               required
             />
-            <button className="verifyotpbutton" type="button" onClick={verifyOtp}>
+            <button
+              className="verifyotpbutton"
+              type="button"
+              onClick={verifyOtp}
+            >
               Verify OTP & Signup
             </button>
           </>
@@ -121,21 +135,32 @@ const Signup = () => {
           <p>or you can sign in with</p>
           <div className="icon-row">
             <button onClick={signInWithGoogle} aria-label="Sign in with Google">
-              <img src="https://img.icons8.com/color/512/google-logo.png" alt="Google" />
+              <img
+                src="https://img.icons8.com/color/512/google-logo.png"
+                alt="Google"
+              />
             </button>
             <button onClick={signInWithApple} aria-label="Sign in with Apple">
-              <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="Apple" />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/0/747.png"
+                alt="Apple"
+              />
             </button>
-            <button onClick={signInWithFacebook} aria-label="Sign in with Facebook">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Facebook" />
+            <button
+              onClick={signInWithFacebook}
+              aria-label="Sign in with Facebook"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png"
+                alt="Facebook"
+              />
             </button>
           </div>
         </div>
 
-
-
         <p className="signup-link">
-          Already have an account? <span onClick={() => navigate("/")}>Log In</span>
+          Already have an account?{' '}
+          <span onClick={() => navigate('/')}>Log In</span>
         </p>
       </form>
     </div>
