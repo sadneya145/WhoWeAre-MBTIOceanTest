@@ -48,7 +48,7 @@ const Header = ({ user }) => {
           </Link>
         ) : (
           <div className="auth-buttons">
-            <button className="btn-outline" onClick={() => navigate('/')}>Login</button>
+            <button className="btn-outline" onClick={() => navigate('/login')}>Login</button>
             <button className="btn-primary" onClick={() => navigate('/signup')}>Signup</button>
           </div>
         )}

@@ -8,6 +8,7 @@ import Profile from './Pages/Profile/Profile';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Faq from './Pages/FAQ/FAQ';
 import PrivacyPolicyPage from './Pages/FAQ/PrivacyPolicy';
+import ProtectedRoute from './ProtectedRoute';
 
 import ISTJ from './MBTI/ISTJ';
 import ESTJ from './MBTI/ESTJ';
@@ -30,12 +31,12 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Home />} />
-        <Route path='/home/profile/:email' element={<Profile />} />
-        <Route path="/home/quiz" element={<OceanQuiz />} />
-        <Route path="/home/results" element={<OceanResults />} />
+        <Route path="/" element={<Home />} />
+        <Route path='/home/profile/:email' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+        <Route path="/home/quiz" element={ <ProtectedRoute><OceanQuiz /></ProtectedRoute>} />
+        <Route path="/home/results" element={<ProtectedRoute><OceanResults /></ProtectedRoute>} />
         <Route path="/home/aboutus" element={<AboutUs />} />
         <Route path='/home/faq' element={<Faq />} />
         <Route path='/home/privacy' element={<PrivacyPolicyPage />} />

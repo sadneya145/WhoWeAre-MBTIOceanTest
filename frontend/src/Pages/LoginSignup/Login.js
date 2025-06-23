@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await loginWithEmail(email, password);
       alert("Login successful!");
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       if (error.code === "auth/user-not-found") {
         alert("No account found. Please sign up first.");
