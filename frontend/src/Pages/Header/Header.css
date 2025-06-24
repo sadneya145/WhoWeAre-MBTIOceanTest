@@ -219,51 +219,120 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .header {
-    padding: 1rem;
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+    gap: 0.8rem;
   }
 
+  /* Top row: Logo and Auth */
+  .header > .logo {
+    align-self: flex-start;
+    font-size: 1.3rem;
+  }
+
+  .auth-section {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+  }
+
+  /* Bottom row: Navigation */
   .nav-links {
     gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
   }
 
   .nav-links a,
   .dropdown-toggle {
-    font-size: 0.9rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
+    font-size: 0.85rem;
   }
 
   .dropdown-menu {
     width: 280px;
-    left: -50px;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .auth-buttons {
-    gap: 0.5rem;
+    left: -100px;
+    top: 2.2rem;
   }
 
   .btn-primary,
   .btn-outline {
     padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .profile-link {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .user-avatar-home {
+    width: 28px;
+    height: 28px;
+  }
+
+  .user-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.7rem 0.8rem;
+    gap: 0.6rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .auth-section {
+    top: 0.7rem;
+    right: 0.8rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    justify-content: space-around;
+  }
+
+  .nav-links a,
+  .dropdown-toggle {
+    font-size: 0.75rem;
+  }
+
+  .auth-buttons {
+    gap: 0.4rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
+    border-radius: 18px;
+  }
+
+  .profile-link {
+    padding: 0.3rem 0.6rem;
+    gap: 6px;
+  }
+
+  .user-avatar-home {
+    width: 24px;
+    height: 24px;
+  }
+
+  .user-name {
+    font-size: 0.7rem;
+  }
+
+  .dropdown-menu {
+    width: 260px;
+    left: -120px;
+    padding: 0.6rem;
+  }
+
+  .dropdown-item {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
   }
 }
