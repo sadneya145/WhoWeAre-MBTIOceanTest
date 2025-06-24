@@ -164,14 +164,14 @@ const Profile = () => {
                 <span className="value">{latestQuiz?.mbtiType || 'N/A'}</span>
               </div>
             </div>
-            {latestQuiz?._id && (
-              <Link
-                className="full-report-btn"
-                to={`/report/${latestQuiz._id}`}
-              >
-                View Full Report →
-              </Link>
-            )}
+            // {latestQuiz?._id && (
+            //   <Link
+            //     className="full-report-btn"
+            //     to={`/report/${latestQuiz._id}`}
+            //   >
+            //     View Full Report →
+            //   </Link>
+            // )}
           </div>
 
           <div className="profile-card score-section">
