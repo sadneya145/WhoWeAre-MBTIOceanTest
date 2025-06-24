@@ -120,7 +120,7 @@
 
 .section-description {
   font-size: 1.3rem;
-  color: #D8C4B6;
+  color: #E8DDD4 !important;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-weight: 400;
@@ -217,7 +217,7 @@
   align-items: center;
 }
 
-/* Radio Button - Professional Blue Design */
+/* Radio Button - Professional Blue Design with Variable Sizes */
 .radio-button-container {
   display: flex;
   flex-direction: column;
@@ -226,8 +226,6 @@
 }
 
 .radio-button {
-  width: 40px;
-  height: 40px;
   border: 3px solid #D8C4B6;
   border-radius: 50%;
   background: linear-gradient(135deg, #F5EFE7 0%, #ffffff 100%);
@@ -239,6 +237,32 @@
   margin-bottom: 0.75rem;
   position: relative;
   box-shadow: 0 4px 8px rgba(33, 53, 85, 0.15);
+}
+
+/* Variable bubble sizes - smallest in middle, larger at extremes */
+.radio-button-container:nth-child(1) .radio-button {
+  width: 50px;
+  height: 50px;
+}
+
+.radio-button-container:nth-child(2) .radio-button {
+  width: 42px;
+  height: 42px;
+}
+
+.radio-button-container:nth-child(3) .radio-button {
+  width: 35px;
+  height: 35px;
+}
+
+.radio-button-container:nth-child(4) .radio-button {
+  width: 42px;
+  height: 42px;
+}
+
+.radio-button-container:nth-child(5) .radio-button {
+  width: 50px;
+  height: 50px;
 }
 
 .radio-button::before {
@@ -496,17 +520,55 @@
 
   .rating-scale {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.5rem;
     max-width: none;
+    position: relative;
+  }
+
+  /* Position scale labels above extreme bubbles */
+  .scale-label:first-child {
+    position: absolute;
+    left: 0;
+    top: -1.2rem;
+    transform: none;
+  }
+
+  .scale-label:last-child {
+    position: absolute;
+    right: 0;
+    top: -1.2rem;
+    transform: none;
   }
 
   .radio-buttons {
     gap: 1.5rem;
+    margin-top: 1rem;
   }
 
-  .radio-button {
-    width: 35px;
-    height: 35px;
+  /* Maintain variable sizes for mobile */
+  .radio-button-container:nth-child(1) .radio-button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .radio-button-container:nth-child(2) .radio-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .radio-button-container:nth-child(3) .radio-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .radio-button-container:nth-child(4) .radio-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .radio-button-container:nth-child(5) .radio-button {
+    width: 45px;
+    height: 45px;
   }
 
   .nav-button {
@@ -515,7 +577,7 @@
   }
 
   .scale-label {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   .radio-label {
@@ -537,13 +599,57 @@
     font-size: 1.1rem;
   }
 
-  .radio-buttons {
-    gap: 1rem;
+  .rating-scale {
+    flex-direction: column;
+    gap: 0.4rem;
+    max-width: none;
+    position: relative;
   }
 
-  .radio-button {
-    width: 32px;
-    height: 32px;
+  /* Position scale labels above extreme bubbles */
+  .scale-label:first-child {
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    transform: none;
+  }
+
+  .scale-label:last-child {
+    position: absolute;
+    right: 0;
+    top: -1rem;
+    transform: none;
+  }
+
+  .radio-buttons {
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+
+  /* Smaller variable sizes for small mobile */
+  .radio-button-container:nth-child(1) .radio-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .radio-button-container:nth-child(2) .radio-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .radio-button-container:nth-child(3) .radio-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .radio-button-container:nth-child(4) .radio-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .radio-button-container:nth-child(5) .radio-button {
+    width: 40px;
+    height: 40px;
   }
 
   .radio-button-inner {
@@ -552,7 +658,7 @@
   }
 
   .scale-label {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .radio-label {
