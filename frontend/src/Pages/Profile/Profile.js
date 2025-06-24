@@ -230,8 +230,6 @@ const Profile = () => {
                     <h3>OCEAN Trait Scores</h3>
                     {renderScoreGraph(q.oceanScores)}
 
-                    <h3>MBTI Scores</h3>
-                    {renderScoreGraph(q.mbtiScores)}
                   </div>
                 </li>
               ))}
