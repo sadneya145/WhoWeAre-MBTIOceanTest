@@ -10,7 +10,7 @@ const Header = ({ user }) => {
     <header className="header">
       <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
         <img src="/logo.png" alt="Logo" style={{ width: '60px', height: '60px' }} />
-        <span> Who We Are?</span>
+        <span> Who We Are</span>
       </div>
 
       <nav className="nav-links">
