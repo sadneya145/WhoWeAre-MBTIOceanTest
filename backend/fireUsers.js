@@ -1,5 +1,5 @@
 // importUsers.js
-module.exports = async function importFirebaseUsers() {
+// module.exports = async function importFirebaseUsers() {
   const mongoose = require('mongoose');
   const admin = require('firebase-admin');
   const dotenv = require('dotenv');
@@ -78,6 +78,6 @@ module.exports = async function importFirebaseUsers() {
     console.log('🎉 All Firebase users imported to MongoDB!');
     process.exit();
   };
-};
+// };
 
-// importFirebaseUsers();
+importFirebaseUsers();
