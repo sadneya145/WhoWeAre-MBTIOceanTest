@@ -9,7 +9,6 @@ module.exports = async function importFirebaseUsers() {
 
   // const serviceAccount = require("./serviceAccountKey.json");
 
-  const admin = require('firebase-admin');
 
 if (!admin.apps.length) {
   const serviceAccountDecoded = Buffer.from(
