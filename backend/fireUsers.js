@@ -9,16 +9,20 @@ module.exports = async function importFirebaseUsers() {
 
   // const serviceAccount = require("./serviceAccountKey.json");
 
+  const admin = require('firebase-admin');
+
+if (!admin.apps.length) {
   const serviceAccountDecoded = Buffer.from(
     process.env.FIREBASE_KEY_BASE64,
     'base64'
   ).toString('utf8');
   const serviceAccount = JSON.parse(serviceAccountDecoded);
 
-  // Initialize Firebase Admin
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
+}
+
 
   // MongoDB connection
   mongoose
