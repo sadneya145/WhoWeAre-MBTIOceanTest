@@ -223,14 +223,22 @@ app.get('/user/:email', async (req, res) => {
 
 if (process.env.RUN_FIREBASE_SYNC === 'true') {
   const importFirebaseUsers = require('./fireUsers');
-  importFirebaseUsers()
-    .then(() => {
+
+  const syncFirebaseUsers = async () => {
+    try {
+      await importFirebaseUsers();
       console.log('✅ Firebase users synced.');
-    })
-    .catch(err => {
+    } catch (err) {
       console.error('❌ Firebase sync error:', err);
-    });
+    }
+  };
+
+  syncFirebaseUsers(); // Run once on start
+
+  // 🔁 Run every 5 minutes
+  setInterval(syncFirebaseUsers, 5 * 60 * 1000);
 }
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
