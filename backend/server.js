@@ -63,7 +63,8 @@ const userSchema = new mongoose.Schema({
   photoUrl: String,
   createdAt: {type: Date, default: Date.now},
 });
-const User = mongoose.model('User', userSchema);
+const User = mongoose.models.User || mongoose.model('User', userSchema);
+
 
 // Quiz Schema
 const quizSchema = new mongoose.Schema({
