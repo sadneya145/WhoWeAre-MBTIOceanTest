@@ -226,6 +226,7 @@ if (process.env.RUN_FIREBASE_SYNC === 'true') {
 
   const syncFirebaseUsers = async () => {
     try {
+      console.log("🕒 Running Firebase sync at:", new Date().toISOString());
       await importFirebaseUsers();
       console.log('✅ Firebase users synced.');
     } catch (err) {
@@ -233,11 +234,12 @@ if (process.env.RUN_FIREBASE_SYNC === 'true') {
     }
   };
 
-  syncFirebaseUsers(); // Run once on start
+  syncFirebaseUsers(); // Run once on startup
 
-  // 🔁 Run every 5 minutes
+  // 🔁 Schedule to run every 5 minutes
   setInterval(syncFirebaseUsers, 5 * 60 * 1000);
 }
+
 
 
 const PORT = process.env.PORT || 5000;
