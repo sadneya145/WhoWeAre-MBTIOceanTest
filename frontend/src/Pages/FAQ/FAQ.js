@@ -240,7 +240,7 @@ const FaqPage = () => {
                                         </a>
                                     </p>
                                     <div style={styles.contactSocial}>
-                                        <a href="http://www.linkedin.com/in/whoweare-mbti" target="_blank" rel="noopener noreferrer" style={styles.socialLink} className="social-link">
+                                        <a href="https://www.linkedin.com/company/107940180/admin/dashboard/" target="_blank" rel="noopener noreferrer" style={styles.socialLink} className="social-link">
                                             <i className="fab fa-linkedin" style={{ fontSize: '24px', color: 'white' }}></i>
                                         </a>
                                         <a href="https://www.instagram.com/whoweare.in/?igsh=MWhpemFzbmpiem12dA%3D%3D&utm_source=qr#" target="_blank" rel="noopener noreferrer" style={styles.socialLink} className="social-link">
