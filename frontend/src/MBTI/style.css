@@ -132,7 +132,7 @@ html {
 
 .section-description {
     font-size: 1.25rem;
-    color: #3E5879;
+    color: #3E5879 !important;
     text-align: center;
     max-width: 900px;
     margin: 0 auto 50px;
