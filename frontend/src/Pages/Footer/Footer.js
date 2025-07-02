@@ -31,7 +31,7 @@ const Footer = () => {
                                 <a href="mailto:whoweare@gmail.com">whoweare@gmail.com</a>
                             </p>
                             <div className="contact-social">
-                                <a href="http://www.linkedin.com/in/whoweare-mbti" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.linkedin.com/company/107940180/admin/dashboard/" target="_blank" rel="noopener noreferrer">
                                     <i className="fab fa-linkedin"></i>
                                 </a>
                                 <a href="https://www.instagram.com/whoweare.in/?igsh=MWhpemFzbmpiem12dA%3D%3D&utm_source=qr#" target="_blank" rel="noopener noreferrer">
