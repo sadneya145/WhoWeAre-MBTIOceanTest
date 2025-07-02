@@ -20,7 +20,7 @@ const AboutUs = () => {
     {
       name: "Sadneya Samant",
       role: "Technical Lead & Backend Engineer",
-      image: "/new4.png",
+      image: "/DSCN13321.JPG",
       description: "Designed backend systems and databases."
     },
     {
