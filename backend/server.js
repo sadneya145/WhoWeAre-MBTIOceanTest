@@ -236,8 +236,8 @@ if (process.env.RUN_FIREBASE_SYNC === 'true') {
 
   syncFirebaseUsers(); // Run once on startup
 
-  // 🔁 Schedule to run every 5 minutes
-  setInterval(syncFirebaseUsers, 5 * 60 * 1000);
+  // 🔁 Schedule to run every 2 minutes
+  setInterval(syncFirebaseUsers, 2 * 60 * 1000);
 }
 
 
