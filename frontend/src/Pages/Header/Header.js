@@ -7,7 +7,7 @@ import { AuthContext } from '../../Context/AuthContext'; // Import context
 const Header = () => {
   const navigate = useNavigate();
   const { user, loading } = useContext(AuthContext);
-  // console.log("User in Header:", user);
+  console.log("User in Header:", user);
 
   return (
     <header className="header">
