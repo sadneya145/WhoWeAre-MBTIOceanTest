@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
 import { useNavigate, Link } from 'react-router-dom';
-import mbtiTypes from '../../constants/mbtiTypes'; // Adjusted import path
+import mbtiTypes from '../../constants/mbtiTypes';
+import { AuthContext } from '../../Context/AuthContext'; // Import context
 
-const Header = ({ user }) => {
+const Header = () => {
   const navigate = useNavigate();
+  const { user, loading } = useContext(AuthContext);
+  // console.log("User in Header:", user);
 
   return (
     <header className="header">
       <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
         <img src="/logo.png" alt="Logo" style={{ width: '60px', height: '60px' }} />
-        <span> Who We Are</span>
+        <span> Who We Are?</span>
       </div>
 
       <nav className="nav-links">
@@ -39,8 +42,7 @@ const Header = ({ user }) => {
             className="profile-link"
           >
             <img
-              src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.displayName || user.email
-                }`}
+              src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.displayName || user.email}`}
               alt="User Avatar"
               className="user-avatar-home"
             />
@@ -58,5 +60,3 @@ const Header = ({ user }) => {
 };
 
 export default Header;
-
-
